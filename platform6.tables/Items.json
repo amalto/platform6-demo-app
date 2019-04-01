@@ -1,0 +1,38 @@
+{
+  "name" : "Items",
+  "appKey" : "p6_demo",
+  "description" : {
+    "EN" : "Items"
+  },
+  "enabled" : false,
+  "contentMode" : "READ",
+  "lastModifiedBy" : "choucri.fahed@amalto.com",
+  "lastModifiedDate" : 1545234764372,
+  "revisionId" : "b26c0023ec0f804bd1426425d1364173",
+  "fields" : [ {
+    "name" : "Id",
+    "type" : "string",
+    "length" : -1.0
+  }, {
+    "name" : "Description",
+    "type" : "string",
+    "length" : -1.0
+  }, {
+    "name" : "UnitPrice",
+    "type" : "string",
+    "length" : -1.0
+  }, {
+    "name" : "Currency",
+    "type" : "string",
+    "length" : -1.0
+  }, {
+    "name" : "UOM",
+    "type" : "string",
+    "length" : -1.0
+  }, {
+    "name" : "Category",
+    "type" : "string",
+    "length" : -1.0
+  } ],
+  "keys" : [ "Id" ]
+}

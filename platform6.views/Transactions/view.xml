@@ -1,0 +1,199 @@
+<View>
+    <SmartTags>
+        <TransactionType>TransactionInfo/TransactionType</TransactionType>
+        <TransactionFormat>TransactionInfo/PivotDocumentFormat</TransactionFormat>
+    </SmartTags>
+    <ConceptName>TransactionInfo</ConceptName>
+    <DataModel>TransactionInfo</DataModel>
+    <DataCluster>B2BOX</DataCluster>
+    <ReprocessRouteUri>direct:p6router.p6_demo_Dispatcher</ReprocessRouteUri>
+    <ListOfKeys>
+        <Key>
+            <Name>Id</Name>
+            <Description>
+                <EN>Id</EN>
+                <FR>Id</FR>
+            </Description>
+            <XPath>TransactionInfo/Id</XPath>
+        </Key>
+    </ListOfKeys>
+    <ListOfSearchables>
+        <Searchable>
+            <Name>LoadDate</Name>
+            <Description>
+                <EN>Load Date</EN>
+                <FR>Date de création</FR>
+            </Description>
+            <XPath>TransactionInfo/CreationDate</XPath>
+            <Type>RangeOfDates(yyyyMMdd'T'HH:mm:ss)</Type>
+        </Searchable>
+        <Searchable>
+            <Name>StatusDate</Name>
+            <Description>
+                <EN>Tech. Status Date</EN>
+                <FR>Date de modif. Statut Tech.</FR>
+            </Description>
+            <XPath>TransactionInfo/TechnicalStatusDate</XPath>
+            <Type>RangeOfDates(yyyyMMdd'T'HH:mm:ss)</Type>
+        </Searchable>
+        <Searchable>
+            <Name>TransactionType</Name>
+            <Description>
+                <EN>Transaction Type</EN>
+                <FR>Type de transaction</FR>
+            </Description>
+            <XPath>TransactionInfo/TransactionType</XPath>
+            <Type>StringContains</Type>
+            <Choice field-line-height="1" multi-select="true" multi-select-delimiter="|">Request for Quotation, Quote, Purchase Order</Choice>
+        </Searchable>
+        <Searchable>
+            <Name>TransactionNumber</Name>
+            <Description>
+                <EN>Transaction Number</EN>
+                <FR>Numéro de transaction</FR>
+            </Description>
+            <XPath>TransactionInfo/TransactionNumber</XPath>
+            <Type>StringContains</Type>
+        </Searchable>
+        <Searchable>
+            <Name>BuyerName</Name>
+            <Description>
+                <EN>Buyer Name</EN>
+                <FR>Nom de l'acheteur</FR>
+            </Description>
+            <XPath>TransactionInfo/KeyValue[./Key = "Buyer Name"]/Value</XPath>
+            <Type>StringContains</Type>
+        </Searchable>
+        <Searchable>
+            <Name>Keywords</Name>
+            <Description>
+                <EN>Keywords</EN>
+                <FR>Mots clefs</FR>
+            </Description>
+            <XPath>TransactionInfo</XPath>
+            <Type>StringContains</Type>
+        </Searchable>
+        <Searchable>
+            <Name>TechnicalStatusCode</Name>
+            <Description>
+                <EN>Technical Status</EN>
+                <FR>Statut technique</FR>
+            </Description>
+            <XPath>TransactionInfo/TechnicalStatusCode</XPath>
+            <Type>StringContains</Type>
+            <Choice field-line-height="2" multi-select="true" multi-select-delimiter="|">Handled,Received,Sent</Choice>
+        </Searchable>
+        <Searchable>
+            <Name>FunctionalStatusCode</Name>
+            <Description>
+                <EN>Functional Status</EN>
+                <FR>Statut fonctionnel</FR>
+            </Description>
+            <XPath>TransactionInfo/FunctionalStatusCode</XPath>
+            <Type>StringContains</Type>
+            <Choice field-line-height="2" multi-select="true" multi-select-delimiter="|">Accepted,Declined,Quote provided,Rejected</Choice>
+        </Searchable>
+    </ListOfSearchables>
+    <ListOfViewables>
+        <Viewable>
+            <Name>LoadDate</Name>
+            <Description>
+                <EN>Load Date</EN>
+                <FR>Date de création</FR>
+            </Description>
+            <XPath>TransactionInfo/CreationDate</XPath>
+            <Type>Date(yyyyMMdd'T'HH:mm:ss)</Type>
+        </Viewable>
+        <Viewable>
+            <Name>StatusDate</Name>
+            <Description>
+                <EN>Status Date</EN>
+                <FR>Date statut</FR>
+            </Description>
+            <XPath>TransactionInfo/TechnicalStatusDate</XPath>
+            <Type>Date(yyyyMMdd'T'HH:mm:ss)</Type>
+        </Viewable>
+        <Viewable>
+            <Name>TransactionType</Name>
+            <Description>
+                <EN>Transaction Type</EN>
+                <FR>Type de transaction</FR>
+            </Description>
+            <XPath>TransactionInfo/TransactionType</XPath>
+            <Type>String</Type>
+        </Viewable>
+        <Viewable>
+            <Name>TransactionNumber</Name>
+            <Description>
+                <EN>Transaction #</EN>
+                <FR>N° de transaction</FR>
+            </Description>
+            <XPath>TransactionInfo/TransactionNumber</XPath>
+            <Type>String</Type>
+        </Viewable>
+        <Viewable>
+            <Name>SellerName</Name>
+            <Description>
+                <EN>Seller Name</EN>
+                 <FR>Nom vendeur</FR>
+            </Description>
+            <XPath>TransactionInfo/KeyValue[Key="Seller Name"]/Value</XPath>
+            <Type>String</Type>
+        </Viewable>
+        <Viewable>
+            <Name>BuyerName</Name>
+            <Description>
+                <EN>Buyer Name</EN>
+                <FR>Nom de l'acheteur</FR>
+            </Description>
+            <XPath>TransactionInfo/KeyValue[Key="Buyer Name"]/Value</XPath>
+            <Type>String</Type>
+        </Viewable>
+        <Viewable>
+            <Name>TechnicalStatusCode</Name>
+            <Description>
+                <EN>Tech. Status</EN>
+                <FR>Statut tech.</FR>
+            </Description>
+            <XPath>TransactionInfo/TechnicalStatusCode</XPath>
+            <Type>String</Type>
+        </Viewable>
+        <Viewable>
+            <Name>FunctionalStatusCode</Name>
+            <Description>
+                <EN>Funct. Status</EN>
+                <FR>Statut fonct.</FR>
+            </Description>
+            <XPath>TransactionInfo/FunctionalStatusCode</XPath>
+            <Type>String</Type>
+        </Viewable>
+        <Viewable>
+            <Name>FunctionalStatusMessage</Name>
+            <Description>
+                <EN>Funct. Status Msg.</EN>
+                <FR>Statut Fonct. Msg.</FR>
+            </Description>
+            <XPath>TransactionInfo/FunctionalStatusMessage</XPath>
+            <Type>String</Type>
+        </Viewable>
+        <Viewable>
+            <Name>Document</Name>
+            <Description>
+                <EN>Document</EN>
+                <FR>Accès doc.</FR>
+            </Description>
+            <XPath>TransactionInfo/TargetDocumentURI</XPath>
+             <Type>URI</Type>
+        </Viewable>
+        
+        <Viewable>
+         <Name>itemLink</Name>
+         <Description>
+            <EN>Work Item</EN>
+            <FR>Transaction</FR>
+         </Description>
+         <XPath>TransactionInfo/Workflow/Instance/flink</XPath>
+         <Type>ItemLink</Type>
+      </Viewable>
+    </ListOfViewables>
+</View>

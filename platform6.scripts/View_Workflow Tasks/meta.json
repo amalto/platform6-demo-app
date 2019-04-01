@@ -1,0 +1,7 @@
+{
+  "description" : {
+    "EN" : "Script generating the Workflow task display for both \"Workflow Tasks\" and \"Transactions\" View"
+  },
+  "enabled" : false,
+  "contentMode" : "READ"
+}

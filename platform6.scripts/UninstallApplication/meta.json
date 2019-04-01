@@ -1,0 +1,7 @@
+{
+  "description" : {
+    "EN" : "Deploy bundle resources and initiliaze tables"
+  },
+  "enabled" : false,
+  "contentMode" : "READ"
+}

@@ -1,0 +1,9 @@
+{
+  "description" : {
+    "EN" : "Demo App routing rule"
+  },
+  "enabled" : true,
+  "contentMode" : "READ",
+  "type" : "xml_routing",
+  "autoStart" : true
+}

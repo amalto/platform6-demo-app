@@ -1,0 +1,7 @@
+{
+  "description" : {
+    "EN" : "Build email"
+  },
+  "enabled" : false,
+  "contentMode" : "READ"
+}

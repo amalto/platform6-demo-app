@@ -1,0 +1,7 @@
+{
+  "description" : {
+    "EN" : "WF_RequestForQuotation"
+  },
+  "enabled" : false,
+  "contentMode" : "READ"
+}

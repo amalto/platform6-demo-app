@@ -1,0 +1,26 @@
+{
+  "name" : "AppConfig",
+  "appKey" : "p6_demo",
+  "description" : {
+    "EN" : "Application Configuration Table"
+  },
+  "enabled" : false,
+  "contentMode" : "EDIT",
+  "lastModifiedBy" : "admin@amalto.com",
+  "lastModifiedDate" : 1553789838253,
+  "revisionId" : "db836832fe768431a9000d0441b13d59",
+  "fields" : [ {
+    "name" : "key",
+    "type" : "string",
+    "length" : -1.0
+  }, {
+    "name" : "value",
+    "type" : "string",
+    "length" : -1.0
+  }, {
+    "name" : "type",
+    "type" : "string",
+    "length" : -1.0
+  } ],
+  "keys" : [ "key" ]
+}

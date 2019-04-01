@@ -1,0 +1,9 @@
+{
+  "description" : {
+    "EN" : "Blockchain Event Listener Route"
+  },
+  "enabled" : true,
+  "contentMode" : "READ",
+  "type" : "web3j",
+  "autoStart" : true
+}

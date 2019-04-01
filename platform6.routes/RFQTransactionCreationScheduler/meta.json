@@ -1,0 +1,9 @@
+{
+  "description" : {
+    "EN" : "Create an UBL RFQ document"
+  },
+  "enabled" : true,
+  "contentMode" : "READ",
+  "type" : "scheduler",
+  "autoStart" : true
+}

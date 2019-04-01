@@ -1,0 +1,9 @@
+{
+  "description" : {
+    "EN" : "Transactions for p6_demo",
+    "FR" : "Transactions pour p6_demo"
+  },
+  "enabled" : true,
+  "contentMode" : "NONE",
+  "type" : "TRANSACTIONS"
+}

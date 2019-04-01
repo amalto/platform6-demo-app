@@ -1,0 +1,7 @@
+{
+  "description" : {
+    "EN" : "Create a RequestForQuotation UBL Document and save it into a file"
+  },
+  "enabled" : false,
+  "contentMode" : "READ"
+}

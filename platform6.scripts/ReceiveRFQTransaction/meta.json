@@ -1,0 +1,7 @@
+{
+  "description" : {
+    "EN" : "Called by Receive_RFQ_Transaction route (File Listener). It creates a TransactionInfo for a Request For Quotation UBL Document"
+  },
+  "enabled" : false,
+  "contentMode" : "READ"
+}

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified"
+            blockDefault=""
+            elementFormDefault="qualified"
+            finalDefault="">
+   <xsd:element abstract="false" name="TransactionInfo" nillable="false">
+      <xsd:complexType mixed="false">
+         <xsd:sequence maxOccurs="1" minOccurs="1">
+            <xsd:element maxOccurs="1" minOccurs="1" name="Id" nillable="false" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="CreationDate" nillable="false" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="TransactionType" nillable="false" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="TransactionNumber" nillable="false" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="SourceSystem" nillable="false" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="TargetSystem" nillable="false" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Sender" nillable="false" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="FinalRecipient" nillable="false" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="TransferProtocol" nillable="false" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="DeliveredVia" nillable="false" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="SourceDocumentFormat" nillable="false"
+                         type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="SourceDocumentURI" nillable="false"
+                         type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="SourceDocumentContentType" nillable="false"
+                         type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="PivotDocumentFormat" nillable="false"
+                         type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="PivotDocumentURI" nillable="false"
+                         type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="PivotDocumentContentType" nillable="false"
+                         type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="TargetDocumentFormat" nillable="false"
+                         type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="TargetDocumentURI" nillable="false"
+                         type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="TargetDocumentContentType" nillable="false"
+                         type="xsd:string"/>
+            
+            <xsd:element maxOccurs="1" minOccurs="0" name="Attachments" nillable="false"
+                         type="Attachments"/>
+
+            <xsd:element maxOccurs="1" minOccurs="0" name="TechnicalStatusCode" nillable="false"
+                         type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="TechnicalStatusMessage" nillable="false"
+                         type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="TechnicalStatusDate" nillable="false"
+                         type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="FunctionalStatusCode" nillable="false"
+                         type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="FunctionalStatusMessage" nillable="false"
+                         type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="FunctionalStatusDate" nillable="false"
+                         type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Flags" nillable="false" type="xsd:string"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="OrgPath" nillable="false" type="xsd:string"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="KeyValue" nillable="false"
+                         type="KeyValue"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Issues" nillable="false" type="Issues"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="AuditTrail" nillable="false">
+               <xsd:complexType mixed="false">
+                  <xsd:sequence maxOccurs="1" minOccurs="1">
+                     <xsd:element maxOccurs="unbounded" minOccurs="1" name="Record" nillable="false">
+                        <xsd:complexType mixed="false">
+                           <xsd:sequence maxOccurs="1" minOccurs="1">
+                              <xsd:element maxOccurs="1" minOccurs="1" name="Type" nillable="false" type="xsd:string"/>
+                              <xsd:element maxOccurs="1" minOccurs="1" name="Code" nillable="false" type="xsd:string"/>
+                              <xsd:element maxOccurs="1" minOccurs="1" name="Date" nillable="false" type="xsd:string"/>
+                              <xsd:element maxOccurs="1" minOccurs="1" name="Message" nillable="false" type="xsd:string"/>
+                           </xsd:sequence>
+                        </xsd:complexType>
+                     </xsd:element>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="Workflow" nillable="false" type="WFInstances"/>
+            
+         </xsd:sequence>
+      </xsd:complexType>
+      <xsd:unique name="MessageInfo">
+         <xsd:selector xpath="."/>
+         <xsd:field xpath="Id"/>
+      </xsd:unique>
+   </xsd:element>
+   <xsd:complexType abstract="false" mixed="false" name="Thread">
+      <xsd:sequence maxOccurs="1" minOccurs="1">
+         <xsd:element maxOccurs="1" minOccurs="1" name="MessageInfoId" nillable="false"
+                      type="xsd:string"/>
+         <xsd:element maxOccurs="1" minOccurs="1" name="BusinessDocName" nillable="false"
+                      type="xsd:string"/>
+         <xsd:element maxOccurs="1" minOccurs="1" name="MessageContent" nillable="false"
+                      type="xsd:string"/>
+         <xsd:element maxOccurs="1" minOccurs="1" name="Date" nillable="false" type="xsd:string"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType abstract="false" mixed="false" name="KeyValue">
+      <xsd:sequence maxOccurs="1" minOccurs="1">
+         <xsd:element maxOccurs="1" minOccurs="1" name="Key" nillable="false" type="xsd:string"/>
+         <xsd:element maxOccurs="1" minOccurs="1" name="Value" nillable="false" type="xsd:string"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType abstract="false" mixed="false" name="Attachments">
+      <xsd:sequence maxOccurs="1" minOccurs="1">
+         <xsd:element maxOccurs="unbounded" minOccurs="0" name="Attachment" nillable="false"
+                      type="Attachment"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType abstract="false" mixed="false" name="Attachment">
+      <xsd:sequence maxOccurs="1" minOccurs="1">
+         <xsd:element maxOccurs="1" minOccurs="1" name="URI" nillable="false" type="xsd:string"/>
+         <xsd:element maxOccurs="1" minOccurs="1" name="ContentType" nillable="false"
+                      type="xsd:string"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType abstract="false" mixed="false" name="Issues">
+      <xsd:sequence maxOccurs="1" minOccurs="1">
+         <xsd:element maxOccurs="unbounded" minOccurs="0" name="Issue" nillable="false" type="Issue"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType abstract="false" mixed="false" name="Issue">
+      <xsd:sequence maxOccurs="1" minOccurs="1">
+         <xsd:element maxOccurs="1" minOccurs="1" name="Level" nillable="false" type="xsd:string"/>
+         <xsd:element maxOccurs="1" minOccurs="0" name="Type" nillable="false" type="xsd:string"/>
+         <xsd:element maxOccurs="1" minOccurs="1" name="Message" nillable="false" type="xsd:string"/>
+         <xsd:element maxOccurs="1" minOccurs="0" name="Field" nillable="false" type="xsd:string"/>
+         <xsd:element maxOccurs="1" minOccurs="0" name="FieldType" nillable="false" type="xsd:string"/>
+         <xsd:element maxOccurs="1" minOccurs="0" name="Value" nillable="false" type="xsd:string"/>
+         <xsd:element maxOccurs="1" minOccurs="0" name="Path" nillable="false" type="xsd:string"/>
+         <xsd:element maxOccurs="1" minOccurs="0" name="ListOfValues" nillable="false"
+                      type="ListOfValues"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType abstract="false" mixed="false" name="ListOfValues">
+      <xsd:sequence maxOccurs="1" minOccurs="1">
+         <xsd:element maxOccurs="unbounded" minOccurs="0" name="Value" nillable="false"
+                      type="xsd:string"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType abstract="false" mixed="false" name="WFInstances">
+      <xsd:sequence maxOccurs="unbounded" minOccurs="1">
+         <xsd:element maxOccurs="1" minOccurs="0" name="FlowName" nillable="false" type="xsd:string"/>
+         <xsd:element maxOccurs="1" minOccurs="0" name="ActiveInstanceId" nillable="false"
+                      type="xsd:string"/>
+         <xsd:element maxOccurs="unbounded" minOccurs="0" name="Instance" nillable="false"
+                      type="WFInstance"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType abstract="false" mixed="false" name="WFInstance">
+      <xsd:sequence maxOccurs="1" minOccurs="1">
+         <xsd:element maxOccurs="1" minOccurs="1" name="id" nillable="false" type="xsd:string"/>
+         <xsd:element maxOccurs="1" minOccurs="1" name="startDate" nillable="false" type="xsd:string"/>
+         <xsd:element maxOccurs="1" minOccurs="0" name="endDate" nillable="false" type="xsd:string"/>
+         <xsd:element maxOccurs="1" minOccurs="0" name="lastUserEmail" nillable="false"
+                      type="xsd:string"/>
+         <xsd:element maxOccurs="1" minOccurs="1" name="status" nillable="false" type="xsd:string"/>
+         <xsd:element maxOccurs="1" minOccurs="0" name="flink" nillable="false" type="FLINK"/>
+         <xsd:element maxOccurs="unbounded" minOccurs="0" name="step" nillable="false" type="WFStep"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType abstract="false" mixed="false" name="WFStep">
+      <xsd:sequence maxOccurs="1" minOccurs="1">
+         <xsd:element maxOccurs="1" minOccurs="1" name="stepId" nillable="false" type="xsd:string"/>
+         <xsd:element maxOccurs="1" minOccurs="1" name="status" nillable="false" type="xsd:string"/>
+         <xsd:element maxOccurs="1" minOccurs="0" name="actionedByEmail" nillable="false"
+                      type="xsd:string"/>
+         <xsd:element maxOccurs="1" minOccurs="1" name="startDate" nillable="false" type="xsd:string"/>
+         <xsd:element maxOccurs="1" minOccurs="0" name="endDate" nillable="false" type="xsd:string"/>
+         <xsd:element maxOccurs="1" minOccurs="0" name="assignedToName" nillable="false"
+                      type="xsd:string"/>
+         <xsd:element maxOccurs="1" minOccurs="1" name="assignees" nillable="true" type="WFAssignees"/>
+         <xsd:element maxOccurs="1" minOccurs="0" name="description" nillable="false"
+                      type="WFDescriptionMap"/>
+         <xsd:element maxOccurs="unbounded" minOccurs="0" name="parameter" nillable="true"
+                      type="KeyValue"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType abstract="false" mixed="false" name="FLINK">
+      <xsd:sequence maxOccurs="1" minOccurs="1">
+         <xsd:element maxOccurs="1" minOccurs="1" name="view" nillable="false" type="xsd:string"/>
+         <xsd:sequence maxOccurs="unbounded" minOccurs="1">
+            <xsd:element maxOccurs="1" minOccurs="1" name="id" nillable="false" type="xsd:string"/>
+         </xsd:sequence>
+         <xsd:element maxOccurs="1" minOccurs="0" name="type" nillable="false" type="xsd:string"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType abstract="false" mixed="false" name="WFAssignees">
+      <xsd:sequence maxOccurs="unbounded" minOccurs="1">
+         <xsd:element maxOccurs="1" minOccurs="1" name="assignee" nillable="false" type="xsd:string"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType abstract="false" mixed="false" name="WFDescriptionMap">
+      <xsd:sequence maxOccurs="unbounded" minOccurs="0">
+         <xsd:any maxOccurs="1" minOccurs="1" namespace="##any" processContents="lax"/>
+      </xsd:sequence>
+   </xsd:complexType>
+</xsd:schema>

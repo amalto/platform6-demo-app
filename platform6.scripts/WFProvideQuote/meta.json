@@ -1,0 +1,7 @@
+{
+  "description" : {
+    "EN" : "Script called when Provide Quote task is complete. Generate a Quote document and corresponding TransactionInfo based on RFQ and user's input."
+  },
+  "enabled" : false,
+  "contentMode" : "READ"
+}

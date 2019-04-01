@@ -1,0 +1,7 @@
+{
+  "description" : {
+    "EN" : "WF_WorkItemEnhancer"
+  },
+  "enabled" : false,
+  "contentMode" : "READ"
+}

@@ -1,0 +1,10 @@
+{
+  "description" : {
+    "EN" : "Template file for email notification from the workflow service for PurchaseOrder"
+  },
+  "enabled" : false,
+  "contentMode" : "NONE",
+  "targetRoot" : "${B2BOX_DATA}",
+  "targetPath" : "/resources/templates/p6demo_POReview.ftl",
+  "props" : { }
+}

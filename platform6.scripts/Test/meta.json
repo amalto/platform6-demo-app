@@ -1,0 +1,7 @@
+{
+  "description" : {
+    "EN" : "A Groovy lib to deploy JAR file bundled resources"
+  },
+  "enabled" : false,
+  "contentMode" : "READ"
+}

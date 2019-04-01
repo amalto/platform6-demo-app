@@ -1,0 +1,7 @@
+{
+  "description" : {
+    "EN" : "Answer or decline RequestForQuotation"
+  },
+  "enabled" : false,
+  "contentMode" : "READ"
+}

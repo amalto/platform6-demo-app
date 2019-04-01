@@ -1,0 +1,9 @@
+{
+  "description" : {
+    "EN" : "Routing rules for Quote"
+  },
+  "enabled" : true,
+  "contentMode" : "READ",
+  "type" : "xml_routing",
+  "autoStart" : true
+}

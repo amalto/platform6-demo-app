@@ -1,0 +1,18 @@
+{
+  "name" : "CountRejectedPOs",
+  "appKey" : "p6_demo",
+  "description" : {
+    "EN" : "# of Purchase Orders with \"Rejected\" functional status (over the past 90 days)"
+  },
+  "enabled" : true,
+  "contentMode" : "NONE",
+  "lastModifiedBy" : "anonymous",
+  "lastModifiedDate" : 1554127440033,
+  "revisionId" : "34f7fedb7547ef25eb72ac63e1a7e4c2",
+  "lastSyncDate" : 1554127440033,
+  "value" : 1.0,
+  "type" : "COUNT",
+  "dataCluster" : "B2BOX",
+  "query" : "/TransactionInfo[TransactionType = \"Purchase Order\" ][FunctionalStatusCode = \"Rejected\" ][concat(substring(CreationDate,1,8),substring(CreationDate,10,2),substring(CreationDate,13,2)) < concat(substring(\"${DATE-90m}\",1,8),substring(\"${DATE-0m}\",10,2),substring(\"${DATE-0m}\",13,2))][concat(substring(CreationDate,1,8),substring(CreationDate,10,2),substring(CreationDate,13,2)) > concat(substring(\"${DATE-90d}\",1,8),substring(\"${DATE-90d}\",10,2),substring(\"${DATE-90d}\",13,2))]",
+  "target" : "Item"
+}
