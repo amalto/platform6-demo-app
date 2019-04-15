@@ -2,8 +2,6 @@ import groovy.json.*
 import org.apache.commons.io.FileUtils
 import org.apache.commons.codec.binary.Base64;
 
-@B2RequiredEndpointScope(feature = "approvalworkflow", action = "read")
-@Field def boolean endpointEnabled;
 
 def xml 		= pipeline.getXml 'xml'
 log.debug 'XML ======> '+ xml
@@ -21,8 +19,6 @@ def transaction = slurper.parseText(message)
 def myURI = transaction.SourceDocumentURI.text()
         
 def  srcFile = fileFromUri(myURI)
-
-  
         
 String rfqContent = FileUtils.readFileToString(srcFile)
 
