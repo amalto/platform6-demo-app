@@ -1,8 +1,8 @@
 <View>
     <SmartTags/>
-    <ConceptName>WFWorkItem</ConceptName>
+    <DataType>WFWorkItem</DataType>
     <DataModel>WFWorkItem</DataModel>
-    <DataCluster>B2BOX</DataCluster>
+    <DataPartition>TRANSACTION</DataPartition>
     <ReprocessRouteUri/>
     <ListOfKeys>
         <Key>

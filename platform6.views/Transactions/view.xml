@@ -3,9 +3,9 @@
         <TransactionType>TransactionInfo/TransactionType</TransactionType>
         <TransactionFormat>TransactionInfo/PivotDocumentFormat</TransactionFormat>
     </SmartTags>
-    <ConceptName>TransactionInfo</ConceptName>
+    <DataType>TransactionInfo</DataType>
     <DataModel>TransactionInfo</DataModel>
-    <DataCluster>B2BOX</DataCluster>
+    <DataPartition>TRANSACTION</DataPartition>
     <ReprocessRouteUri>direct:p6router.p6_demo_Dispatcher</ReprocessRouteUri>
     <ListOfKeys>
         <Key>
