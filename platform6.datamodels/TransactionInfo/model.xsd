@@ -75,14 +75,14 @@
             
          </xsd:sequence>
       </xsd:complexType>
-      <xsd:unique name="MessageInfo">
+      <xsd:unique name="TransactionInfo">
          <xsd:selector xpath="."/>
          <xsd:field xpath="Id"/>
       </xsd:unique>
    </xsd:element>
    <xsd:complexType abstract="false" mixed="false" name="Thread">
       <xsd:sequence maxOccurs="1" minOccurs="1">
-         <xsd:element maxOccurs="1" minOccurs="1" name="MessageInfoId" nillable="false"
+         <xsd:element maxOccurs="1" minOccurs="1" name="TransactionInfoId" nillable="false"
                       type="xsd:string"/>
          <xsd:element maxOccurs="1" minOccurs="1" name="BusinessDocName" nillable="false"
                       type="xsd:string"/>
