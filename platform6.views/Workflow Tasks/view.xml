@@ -1,7 +1,7 @@
 <View>
     <SmartTags/>
-    <DataType>WFWorkItem</DataType>
-    <DataModel>WFWorkItem</DataModel>
+    <DataType>WorkflowTask</DataType>
+    <DataModel>WorkflowTask</DataModel>
     <DataPartition>TRANSACTION</DataPartition>
     <ReprocessRouteUri/>
     <ListOfKeys>
@@ -11,7 +11,7 @@
                 <EN>Id</EN>
                 <FR>Id</FR>
             </Description>
-            <XPath>WFWorkItem/id</XPath>
+            <XPath>WorkflowTask/id</XPath>
         </Key>
     </ListOfKeys>
     <ListOfSearchables>
@@ -21,7 +21,7 @@
                 <EN>Doc. Type</EN>
                 <FR>Type du Doc</FR>
             </Description>
-            <XPath>WFWorkItem/itemAttributes[key="TransactionType"]/values/_text</XPath>
+            <XPath>WorkflowTask/itemAttributes[key="TransactionType"]/values/_text</XPath>
             <Type>StringContains</Type>
         </Searchable>
         <Searchable>
@@ -30,7 +30,7 @@
                 <EN>Doc. Number</EN>
                 <FR>N° du Doc</FR>
             </Description>
-            <XPath>WFWorkItem/itemAttributes[key="TransactionNumber"]/values/_text</XPath>
+            <XPath>WorkflowTask/itemAttributes[key="TransactionNumber"]/values/_text</XPath>
             <Type>StringContains</Type>
         </Searchable>
         <Searchable>
@@ -39,7 +39,7 @@
                 <EN>Assignee</EN>
                 <FR>Destinataire</FR>
             </Description>
-            <XPath>WFWorkItem/assignees/assignee</XPath>
+            <XPath>WorkflowTask/assignees/assignee</XPath>
             <Type>InList</Type>
         </Searchable>
     </ListOfSearchables>
@@ -50,7 +50,7 @@
                 <EN>WF. Start Date</EN>
                 <FR>Date de début</FR>
             </Description>
-            <XPath>WFWorkItem/itemAttributes[key="StartDate"]/values/_text</XPath>
+            <XPath>WorkflowTask/itemAttributes[key="StartDate"]/values/_text</XPath>
             <Type>Date(yyyy-MM-dd'T'HH:mm:ss)</Type>
         </Viewable>
         <Viewable>
@@ -59,7 +59,7 @@
              <EN>Doc. Type</EN>
              <FR>Type</FR>
           </Description>
-          <XPath>/WFWorkItem/itemAttributes[key="TransactionType"]/values/_text</XPath>
+          <XPath>/WorkflowTask/itemAttributes[key="TransactionType"]/values/_text</XPath>
           <Type>String</Type>
        </Viewable>
        <Viewable>
@@ -68,7 +68,7 @@
              <EN>Doc. Number</EN>
              <FR>N° doc.</FR>
           </Description>
-          <XPath>/WFWorkItem/itemAttributes[key="TransactionNumber"]/values/_text</XPath>
+          <XPath>/WorkflowTask/itemAttributes[key="TransactionNumber"]/values/_text</XPath>
           <Type>String</Type>
        </Viewable>
         
@@ -78,7 +78,7 @@
                 <EN>Transaction</EN>
                 <FR>Transaction</FR>
             </Description>
-            <XPath>WFWorkItem/flink</XPath>
+            <XPath>WorkflowTask/flink</XPath>
             <Type>ItemLink</Type>
         </Viewable>
         <Viewable>
@@ -87,7 +87,7 @@
                 <EN>WF. Actions</EN>
                 <FR>Actions WF.</FR>
             </Description>
-            <XPath>WFWorkItem/step/WorkflowStep</XPath>
+            <XPath>WorkflowTask/step/WorkflowStep</XPath>
             <Type>WorkflowStep</Type>
         </Viewable>
     </ListOfViewables>
