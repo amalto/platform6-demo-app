@@ -66,7 +66,7 @@ Attachments.each {
 
             <div class="message-info-file">
 
-                <div onclick="b2portal.messageDownload(this)"
+                <div onclick="platform6.transactionDownload(this)"
                     class="ft-icon ft-icon-${attachmentExtension}"
                     data-extension="${attachmentExtension}"
                     data-ids=${Id}
@@ -423,7 +423,7 @@ def my_html = """
                     <div class="message-info-label"><center>Source document</center></div>
                     <div class="message-info-value">
                         <div class="message-info-file">
-                            <div onclick="b2portal.messageDownload(this)"
+                            <div onclick="platform6.transactionDownload(this)"
                                 class="ft-icon ft-icon-${srcDocExtension}"
                                 data-extension="${srcDocExtension}"
                                 data-ids="${Id}"
@@ -444,7 +444,7 @@ def my_html = """
                     <div class="message-info-value">
                         <div class="message-info-file">
 
-                            <div onclick="b2portal.messageDownload(this)"
+                            <div onclick="platform6.transactionDownload(this)"
                                 class="ft-icon ft-icon-${curDocExtension}"
                                 data-extension="${curDocExtension}"
                                 data-ids="${Id}"
