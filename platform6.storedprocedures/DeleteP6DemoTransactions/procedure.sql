@@ -4,4 +4,4 @@ where xpath_exists('/TransactionInfo/KeyValue[./Key = "Application" and Value="p
 
 delete
 from p6core.item
-where xpath_exists('/WFWorkItem/flink/view[.="p6_demo.Transactions"]' , content);
+where xpath_exists('/WorkflowTask/flink/view[.="p6_demo.Transactions"]' , content);
