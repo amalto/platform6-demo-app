@@ -2,7 +2,6 @@ import com.fasterxml.jackson.databind.ObjectMapper
 
 import io.platform6.demo.sc.RequestForQuotations
 
-import java.nio.ByteBuffer
 import java.time.*
 
 import org.web3j.abi.EventEncoder
@@ -12,9 +11,7 @@ import org.web3j.abi.TypeReference
 import org.web3j.abi.datatypes.Event
 import org.web3j.abi.datatypes.Type
 import org.web3j.crypto.*
-import org.web3j.protocol.core.methods.response.Log
 import org.web3j.protocol.core.methods.response.TransactionReceipt
-import org.web3j.protocol.Web3j
 import org.web3j.tx.*
 import org.web3j.tx.response.PollingTransactionReceiptProcessor
 import org.web3j.utils.Numeric
@@ -151,7 +148,7 @@ class RFQSmartContractHelper {
     static EventValues extractEvent(Event event, String[] logTopics, String logData) {
         String encodedEventSignature = EventEncoder.encode(event)
 
-        if (!logTopics[0].equals(encodedEventSignature)) {
+        if (logTopics[0] != encodedEventSignature) {
             return null
         }
 
@@ -177,7 +174,7 @@ class RFQSmartContractHelper {
 
     // Date / Time helper functions
 
-    ZonedDateTime now() {
+    static ZonedDateTime now() {
         return ZonedDateTime.now(ZoneId.systemDefault())
     }
 }
