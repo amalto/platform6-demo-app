@@ -1,16 +1,32 @@
 plugins {
-    id 'groovy'
+    id "java"
+    id "groovy"
 }
 
 repositories {
     jcenter()
 }
 
-dependencies {
-    implementation 'org.codehaus.groovy:groovy-all:2.5.3'
+// TODO Add all other libraries that can be used by scripts
+// TODO Add the official DSL interfaces jar once ready
+ext {
+    groovyVersion = "2.5.7"
+    web3jVersion = "3.6.0"
+}
 
-    testImplementation 'org.spockframework:spock-core:1.2-groovy-2.5', {
-        exclude module: 'groovy-all'
+dependencies {
+    // By default include all jars in bundled resources
+    new File("platform6.bundledresources").eachDir {
+        compile fileTree(dir: it, include: "*.jar")
+    }
+
+    compile "org.codehaus.groovy:groovy-all:$groovyVersion"
+    compile "org.web3j:abi:$web3jVersion"
+    compile "org.web3j:core:$web3jVersion"
+    compile "org.web3j:crypto:$web3jVersion"
+
+    testCompile "org.spockframework:spock-core:1.2-groovy-2.5", {
+        exclude module: "groovy-all"
     }
 }
 
@@ -18,7 +34,7 @@ sourceSets {
     main {
         groovy {
             new File("platform6.scripts").eachDir {
-                srcDir it
+                srcDir it.path + "/src/main/groovy"
             }
         }
     }
