@@ -12,7 +12,6 @@
   "lastSyncDate" : 1554127320041,
   "value" : 2.0,
   "type" : "COUNT",
-  "dataPartition" : "TRANSACTION",
   "query" : "/TransactionInfo[TransactionType = \"Quote\" ][TechnicalStatusCode = \"Sent\" ][concat(substring(CreationDate,1,8),substring(CreationDate,10,2),substring(CreationDate,13,2)) < concat(substring(\"${DATE-90m}\",1,8),substring(\"${DATE-0m}\",10,2),substring(\"${DATE-0m}\",13,2))][concat(substring(CreationDate,1,8),substring(CreationDate,10,2),substring(CreationDate,13,2)) > concat(substring(\"${DATE-90d}\",1,8),substring(\"${DATE-90d}\",10,2),substring(\"${DATE-90d}\",13,2))]",
-  "target" : "Item"
+  "target" : "Transaction"
 }
