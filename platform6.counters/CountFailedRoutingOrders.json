@@ -12,7 +12,6 @@
   "lastSyncDate" : 1554129900045,
   "value" : 406.0,
   "type" : "COUNT",
-  "dataPartition" : "TRANSACTION",
   "query" : "/routingOrder",
   "target" : "FailedRoutingOrder"
 }
