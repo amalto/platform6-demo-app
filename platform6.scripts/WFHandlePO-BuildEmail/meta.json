@@ -1,6 +1,6 @@
 {
   "description" : {
-    "EN" : "Build the email notification sent by the HandlePurchaseOrder Worflow Step"
+    "EN" : "Build the email notification sent by the HandlePurchaseOrder Workflow Step"
   },
   "enabled" : false,
   "contentMode" : "READ"

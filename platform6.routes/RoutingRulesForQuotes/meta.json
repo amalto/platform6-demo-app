@@ -1,6 +1,6 @@
 {
   "description" : {
-    "EN" : "Routing rules for RequestForQuotation"
+    "EN" : "Routing rules for Quotes"
   },
   "enabled" : true,
   "contentMode" : "READ",
