@@ -1,9 +1,0 @@
-{
-  "description" : {
-    "EN" : "Routing rules for PurchaseOrder"
-  },
-  "enabled" : true,
-  "contentMode" : "READ",
-  "type" : "xml_routing",
-  "autoStart" : true
-}

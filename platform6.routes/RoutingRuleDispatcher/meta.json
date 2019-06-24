@@ -1,6 +1,6 @@
 {
   "description" : {
-    "EN" : "Demo App routing rule"
+    "EN" : "Dispatcher to RFQ, Quote or PO Routing Rules"
   },
   "enabled" : true,
   "contentMode" : "READ",

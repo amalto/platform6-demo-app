@@ -1,6 +1,6 @@
 {
   "description" : {
-    "EN" : "Deploy bundle resources and initiliaze tables"
+    "EN" : "Delete all Service Items, Transactions and Workflow Tasks related to p6_demo"
   },
   "enabled" : false,
   "contentMode" : "READ"

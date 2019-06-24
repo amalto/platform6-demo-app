@@ -1,6 +1,6 @@
 {
   "description" : {
-    "EN" : "Called by Receive_RFQ_Transaction route (File Listener). It creates a TransactionInfo for a Request For Quotation UBL Document"
+    "EN" : "Handle the reception of an RFQ (creation of the RFQ TransactionInfo, storage to file system…) - Script called by the BlockchainEventHandler script"
   },
   "enabled" : false,
   "contentMode" : "READ"

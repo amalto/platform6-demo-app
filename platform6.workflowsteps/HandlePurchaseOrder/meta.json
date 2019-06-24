@@ -1,6 +1,6 @@
 {
   "description" : {
-    "EN" : "Accept or reject PurchaseOrder"
+    "EN" : "Accept or Reject the Order"
   },
   "enabled" : false,
   "contentMode" : "READ"

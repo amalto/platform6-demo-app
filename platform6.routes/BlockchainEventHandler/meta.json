@@ -1,0 +1,9 @@
+{
+  "description" : {
+    "EN" : "Blockchain Event Handler"
+  },
+  "enabled" : true,
+  "contentMode" : "READ",
+  "type" : "web3j",
+  "autoStart" : true
+}

@@ -1,6 +1,6 @@
 {
   "description" : {
-    "EN" : "Deploy bundle resources and initiliaze tables"
+    "EN" : "Deploy Bundled Resources and initialize Tables"
   },
   "enabled" : false,
   "contentMode" : "READ"

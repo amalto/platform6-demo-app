@@ -14,7 +14,7 @@ camel.getCtx().addRoutes(new RouteBuilder() {
                 .otherwise()
                     .throwException(com.amalto.b2box.core.api.B2boxException,'No matching rule found for item!')
             .end()
-            .routeId("p6_demo Routing Rules - RequestForQuotation")
-            .description("p6_demo Request For Quotation Routing Rule")
+            .routeId("p6_demo Routing rules for RequestForQuotation")
+            .description("p6_demo Routing rules for RequestForQuotation")
     }
 })

@@ -1,7 +1,0 @@
-{
-  "description" : {
-    "EN" : "Set TransactionInfo FunctionalStatus to Accepted"
-  },
-  "enabled" : false,
-  "contentMode" : "READ"
-}

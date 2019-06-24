@@ -52,7 +52,7 @@
     </StatusLabels>
     
     <Actions>
-        <Action id="send" status="Provided" type="FORM" stop="true" script="p6_demo.WFProvideQuote">
+        <Action id="send" status="Provided" type="FORM" stop="true" script="p6_demo.WFHandleRFQ-HandleActionProvideQuote">
             <Style>icon:fa-check,btn:btn-success</Style>
 
             <Label>
@@ -60,7 +60,7 @@
                 <FR>Fournir Quotation</FR>
             </Label>
 
-            <FormGenerator>p6_demo.WFRequestForQuotation</FormGenerator>
+            <FormGenerator>p6_demo.WFHandleRFQ-ProvideFormForQuoteCreation</FormGenerator>
            
            <Parameter>
                 <Name>rfq</Name>
@@ -83,7 +83,7 @@
             </Parameter>
         </Action>
                 
-        <Action id="deprecate" status="Declined" type="ACTION" stop="true" script="p6_demo.WFDeclineRFQ">
+        <Action id="deprecate" status="Declined" type="ACTION" stop="true" script="p6_demo.WFHandleRFQ-HandleActionDecline">
             <Style>icon:fa-times,btn:btn-danger,color:danger</Style> 
             
             <Label>

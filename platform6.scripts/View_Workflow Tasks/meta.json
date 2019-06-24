@@ -1,6 +1,6 @@
 {
   "description" : {
-    "EN" : "Script generating the Workflow task display for both \"Workflow Tasks\" and \"Transactions\" View"
+    "EN" : "Provide html display of Workflow Tasks"
   },
   "enabled" : false,
   "contentMode" : "READ"

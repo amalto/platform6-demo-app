@@ -1,7 +1,0 @@
-{
-  "description" : {
-    "EN" : "Called by Receive_Quote_Transaction route (File Listener). Parse the Quote and generate the corresponding PurchaseOrder UBL Document and the corresponding TransactionInfo."
-  },
-  "enabled" : false,
-  "contentMode" : "READ"
-}

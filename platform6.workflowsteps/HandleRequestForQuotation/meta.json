@@ -1,6 +1,6 @@
 {
   "description" : {
-    "EN" : "Answer or decline RequestForQuotation"
+    "EN" : "Provide Quote or Decline RFQ"
   },
   "enabled" : false,
   "contentMode" : "READ"

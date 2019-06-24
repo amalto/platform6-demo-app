@@ -1,0 +1,7 @@
+{
+  "description" : {
+    "EN" : "Handle TransactionInfo updates for a Rejected Order - Script called by the HandlePurchaseOrder Worflow Step"
+  },
+  "enabled" : false,
+  "contentMode" : "READ"
+}

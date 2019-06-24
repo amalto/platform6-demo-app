@@ -1,6 +1,6 @@
 {
   "description" : {
-    "EN" : "Create a RequestForQuotation UBL Document and save it into a file"
+    "EN" : "Create a RequestForQuotation UBL Document and write it in an Ethereum smart contract"
   },
   "enabled" : false,
   "contentMode" : "READ"
