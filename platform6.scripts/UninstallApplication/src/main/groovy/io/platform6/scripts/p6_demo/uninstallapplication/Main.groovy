@@ -11,11 +11,11 @@ p6.service.restartService('platform6.transactions')
 log.debug 'Services restarted to finish cleaning up transaction data'
 
 // Destroy routes
-p6.camel.destroyRoute('p6_demo Web3j - BlockchainEventListener')
+p6.camel.destroyRoute('p6_demo Web3j - BlockchainEventHandler')
 p6.camel.destroyRoute('p6_demo Scheduler - CreateRFQTransaction')
-p6.camel.destroyRoute('p6_demo Routing Rules - PurchaseOrder')
-p6.camel.destroyRoute('p6_demo Routing Rules - Quote')
-p6.camel.destroyRoute('p6_demo Routing Rules - RequestForQuotation')
+p6.camel.destroyRoute('p6_demo Routing rules for Purchase Orders')
+p6.camel.destroyRoute('p6_demo Routing rules for Quotation')
+p6.camel.destroyRoute('p6_demo Routing rules for RequestForQuotation')
 p6.camel.destroyRoute('p6_demo Routing Rules Dispatcher')
 p6.camel.destroyRoute('p6_demo Refresh CountRFQs')
 p6.camel.destroyRoute('p6_demo Refresh CountQuotes')

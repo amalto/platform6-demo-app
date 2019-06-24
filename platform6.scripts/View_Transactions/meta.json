@@ -1,6 +1,6 @@
 {
   "description" : {
-    "EN" : "View p6_demo Transactions"
+    "EN" : "Provide html display of Transactions"
   },
   "enabled" : false,
   "contentMode" : "READ"

@@ -1,0 +1,7 @@
+{
+  "description" : {
+    "EN" : "Handle RFQ TransactionInfo update for Declined RFQ - Script called by the HandleRequestForQuotation Workflow Step"
+  },
+  "enabled" : false,
+  "contentMode" : "READ"
+}

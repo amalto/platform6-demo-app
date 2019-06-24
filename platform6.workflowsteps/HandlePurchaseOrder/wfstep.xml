@@ -16,7 +16,7 @@
     <AllowApproverDelegation>false</AllowApproverDelegation>
     
     <SendEmails>true</SendEmails>
-    <EmailTemplate modelScript="p6_demo.WFBuildEmailPO">file://${B2BOX_DATA}/resources/templates/p6demo_POReview.ftl</EmailTemplate>
+    <EmailTemplate modelScript="p6_demo.WFHandlePO-BuildEmail">file://${B2BOX_DATA}/resources/templates/p6demo_POReview.ftl</EmailTemplate>
     
     <Ttl id="expire">120</Ttl>
     
@@ -53,7 +53,7 @@
     </StatusLabels>
     
     <Actions>
-        <Action id="accept" status="Accepted" type="ACTION" stop="true" script="p6_demo.WFAcceptPO">
+        <Action id="accept" status="Accepted" type="ACTION" stop="true" script="p6_demo.WFHandlePO-HandleActionAcceptOrder">
 
             <Style>icon:fa-check,btn:btn-success</Style>
 
@@ -74,7 +74,7 @@
 
         </Action>
                 
-        <Action id="reject" status="Rejected" type="ACTION" stop="true" script="p6_demo.WFRejectPO">
+        <Action id="reject" status="Rejected" type="ACTION" stop="true" script="p6_demo.WFHandlePO-HandleActionRejectOrder">
             
             <Style>icon:fa-times,btn:btn-danger,color:danger</Style> 
             

@@ -1,0 +1,10 @@
+{
+  "description" : {
+    "EN" : "Scheduled refresh of the Counters",
+    "FR" : "Actualisation planifiée des compteurs"
+  },
+  "enabled" : true,
+  "contentMode" : "NONE",
+  "type" : "scheduler",
+  "autoStart" : true
+}
