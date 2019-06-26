@@ -1,5 +1,8 @@
 // This script is launched when the application is installed on the instance
 
+
+import io.platform6.demo.sc.RequestForQuotations
+
 import org.web3j.tx.*
 import org.web3j.tx.response.PollingTransactionReceiptProcessor
 
@@ -14,7 +17,7 @@ log.debug 'Loaded bundled resources'
 String P6_TMP = System.getenv('B2BOX_TMP')
 def csvFile = [ skipLines: 0, separator: ',', useFirstLineHeaders: true, uri: "file:///$P6_TMP/p6_demo_items.csv" ]
 
-csv.parse(csvFile) { row ->
+p6.csv.parse(csvFile) { row ->
     def records = new ArrayList()
     records[0] = row
     table.upsertRecords('p6_demo.Items', records)
@@ -34,8 +37,8 @@ def credentials = p6.ethereumrpc.getCredentials("p6_demo.AppConfig", [key: "demo
 
 // Define a custom transaction manager with a polling frequency of 2 seconds
 def processor = new PollingTransactionReceiptProcessor(web3j, 2000L, TransactionManager.DEFAULT_POLLING_ATTEMPTS_PER_TX_HASH)
-def tm = new RawTransactionManager(web3j, credentials, ChainId.NONE, processor)
-def contract = io.platform6.demo.sc.RequestForQuotations.deploy(web3j, tm, p6.ethereumrpc.DEFAULT_GAS_PRICE, p6.ethereumrpc.DEFAULT_GAS_LIMIT).send()
+def tm = new RawTransactionManager(web3j, credentials, ChainIdLong.NONE, processor)
+def contract = RequestForQuotations.deploy(web3j, tm, p6.ethereumrpc.DEFAULT_GAS_PROVIDER).send()
 
 // Save the contract address and Ethereum client URL in config table
 p6.appconfig.save("p6_demo", [

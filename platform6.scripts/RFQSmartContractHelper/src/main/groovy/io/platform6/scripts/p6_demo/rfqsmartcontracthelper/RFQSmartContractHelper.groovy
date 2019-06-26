@@ -48,11 +48,10 @@ class RFQSmartContractHelper {
 
         // Define a custom transaction manager with a polling frequency of 2 seconds
         def processor = new PollingTransactionReceiptProcessor(web3j, 2000L, TransactionManager.DEFAULT_POLLING_ATTEMPTS_PER_TX_HASH)
-        def transactionManager = new RawTransactionManager(web3j, readCredentials(), ChainId.NONE, processor)
+        def transactionManager = new RawTransactionManager(web3j, readCredentials(), ChainIdLong.NONE, processor)
 
         def contractAddress = context.p6.table.lookup('p6_demo.AppConfig', [key: 'contractAddress']).value[0]
-        this.smartContract = RequestForQuotations.load(
-            contractAddress, web3j, transactionManager, context.p6.ethereumrpc.DEFAULT_GAS_PRICE, context.p6.ethereumrpc.DEFAULT_GAS_LIMIT)
+        this.smartContract = RequestForQuotations.load(contractAddress, web3j, transactionManager, context.p6.ethereumrpc.DEFAULT_GAS_PROVIDER)
     }
 
     Credentials readCredentials() {
