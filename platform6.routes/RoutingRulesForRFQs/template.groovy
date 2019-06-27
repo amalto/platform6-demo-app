@@ -10,7 +10,7 @@ camel.getCtx().addRoutes(new RouteBuilder() {
                     .setHeader("appkey").constant("p6_demo")
                     .setHeader("flowname").constant("UUID")
                     .setHeader("script").constant("p6_demo.WFStepBuilder")
-                    .to("p6route://workflowsteps")
+                    .to("p6route://platform6.workflowsteps")
                 .otherwise()
                     .throwException(com.amalto.b2box.core.api.B2boxException,'No matching rule found for item!')
             .end()

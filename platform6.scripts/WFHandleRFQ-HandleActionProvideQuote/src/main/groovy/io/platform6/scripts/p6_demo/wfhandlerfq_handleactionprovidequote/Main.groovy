@@ -15,11 +15,11 @@ import java.text.DecimalFormat
 def helper = new RFQSmartContractHelper(this)
 
 def xml = p6.pipeline.getXml 'xml'
-def concept = p6.pipeline.get 'platform6.request.dataType'
+def dataType = p6.pipeline.get 'platform6.request.dataType'
 def rfqId = p6.pipeline.get 'platform6.request.ids'
 
 // Fetch RFQ from database
-def rfqPk = p6.transaction.buildPK(concept, rfqId)
+def rfqPk = p6.transaction.buildPK(dataType, rfqId)
 def transactionInfoContent = p6.transaction.get(rfqPk)
 
 XmlSlurper slurper = new XmlSlurper()

@@ -11,11 +11,11 @@ import org.apache.commons.io.FileUtils
 
 def helper = new RFQSmartContractHelper(this)
 
-def concept = p6.pipeline.get 'platform6.request.dataType'
+def dataType = p6.pipeline.get 'platform6.request.dataType'
 def quoteIdString = p6.pipeline.get 'platform6.request.ids'
 
 // Fetch the quote transaction info
-def quotePk = p6.transaction.buildPK(concept, quoteIdString)
+def quotePk = p6.transaction.buildPK(dataType, quoteIdString)
 def transactionInfoContent = p6.transaction.get(quotePk)
 
 XmlSlurper slurper = new XmlSlurper()

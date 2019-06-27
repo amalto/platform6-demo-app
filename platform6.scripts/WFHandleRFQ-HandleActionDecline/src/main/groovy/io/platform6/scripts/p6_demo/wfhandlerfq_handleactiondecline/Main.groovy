@@ -10,14 +10,14 @@ import java.util.UUID
 
 def helper = new RFQSmartContractHelper(this)
 
-def concept = p6.pipeline.get 'platform6.request.dataType'
+def dataType = p6.pipeline.get 'platform6.request.dataType'
 def rfqId = p6.pipeline.get 'platform6.request.ids'
 def reason = p6.pipeline.get 'reason'
 
 def now = helper.now()
 
 // Fetch the RFQ transaction info
-def rfqPk = p6.transaction.buildPK(concept, rfqId)
+def rfqPk = p6.transaction.buildPK(dataType, rfqId)
 def transactionInfoContent = p6.transaction.get(rfqPk)
 
 XmlSlurper slurper = new XmlSlurper()

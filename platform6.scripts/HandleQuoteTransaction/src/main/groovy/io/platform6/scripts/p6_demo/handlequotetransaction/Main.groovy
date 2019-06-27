@@ -186,7 +186,7 @@ def orderContent = """<?xml version="1.0" encoding="UTF-8"?>
 """
 
 
-def  targetFile = p6.uri.fileFromUrl(targetURI)
+def targetFile = p6.uri.fileFromUrl(targetURI)
 
 FileUtils.writeStringToFile(targetFile, orderContent,'UTF-8')
 

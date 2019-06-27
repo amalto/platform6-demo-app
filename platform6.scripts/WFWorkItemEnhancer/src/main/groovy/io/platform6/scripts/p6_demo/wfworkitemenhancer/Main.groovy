@@ -1,7 +1,7 @@
-def concept = p6.pipeline.get 'platform6.request.dataType'
+def dataType = p6.pipeline.get 'platform6.request.dataType'
 def ids = p6.pipeline.get 'platform6.request.ids'
 
-def ipk = p6.transaction.buildPK(concept, ids)
+def ipk = p6.transaction.buildPK(dataType, ids)
 def item = p6.transaction.get(ipk)
 
 def transactionInfo = new XmlSlurper().parseText(item)

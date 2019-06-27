@@ -6,10 +6,10 @@ p6.pipeline.put 'From', 'no-reply@platform6.io'
 
 def INSTANCE_ID = p6.configuration.get("applicationid")
 
-def concept = p6.pipeline.get 'platform6.request.dataType'
+def dataType = p6.pipeline.get 'platform6.request.dataType'
 def itemIds = p6.pipeline.get 'platform6.request.ids'
 
-def itemPk = p6.transaction.buildPK(concept, itemIds)
+def itemPk = p6.transaction.buildPK(dataType, itemIds)
 
 def transactionInfoContent = p6.transaction.exists(itemPk)
 

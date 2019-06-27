@@ -8,7 +8,7 @@ camel.getCtx().addRoutes(new RouteBuilder() {
                     .setHeader("appkey").constant("p6_demo")
                     .setHeader('id').constant('p6_demo.SendQuoteToBlockchain')
                     .setProperty('execute.async').constant(true)
-                    .to( 'p6route://scripts')
+                    .to("p6route://platform6.scripts")
                 .otherwise()
                     .throwException(com.amalto.b2box.core.api.B2boxException,'No matching rule found for item!')
             .end()

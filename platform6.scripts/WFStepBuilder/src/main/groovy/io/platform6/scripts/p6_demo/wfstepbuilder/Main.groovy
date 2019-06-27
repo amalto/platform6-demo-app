@@ -2,10 +2,10 @@ p6.pipeline.variables().each() { log.debug "PIPELINE VAR ${it}" }
 
 def workflowStep = p6.pipeline.getXml 'templateStepXml'
 
-def concept = p6.pipeline.get 'platform6.request.dataType'
+def dataType = p6.pipeline.get 'platform6.request.dataType'
 def itemIds = p6.pipeline.get 'platform6.request.ids'
 
-def itemPk = p6.transaction.buildPK(concept, itemIds)
+def itemPk = p6.transaction.buildPK(dataType, itemIds)
 
 def transactionInfoContent = p6.transaction.exists(itemPk)
 
