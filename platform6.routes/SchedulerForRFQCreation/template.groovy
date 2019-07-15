@@ -6,7 +6,7 @@ try {
             from("timer://myTimer?period=10m")
                 .to('p6cmb://scripts?platform6.request.action=execute&id=p6_demo.CreateRFQTransaction')
                 .routeId(routeId)
-                .description("p6_demo Scheduled creation of RFQs");
+                .description(routeId)
         }
     })
 
