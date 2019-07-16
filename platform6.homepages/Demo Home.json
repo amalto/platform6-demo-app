@@ -1,41 +1,41 @@
 {
-  "name" : "Demo Home",
-  "appKey" : "p6_demo",
-  "description" : {
-    "EN" : "Demo Home"
-  },
-  "enabled" : false,
-  "contentMode" : "READ",
-  "lastModifiedBy" : "choucri.fahed@amalto.com",
-  "lastModifiedDate" : 1545328964316,
-  "revisionId" : "ade812eac6dab5cb87791684a269c4af",
-  "modules" : [ {
-    "id" : "p6_demo.CountRFQs",
-    "order" : 0,
-    "type" : "counters",
-    "width" : "small",
-    "height" : "medium",
-    "data" : null
-  }, {
-    "id" : "p6_demo.CountQuotes",
-    "order" : 1,
-    "type" : "counters",
-    "width" : "small",
-    "height" : "medium",
-    "data" : null
-  }, {
-    "id" : "p6_demo.CountAcceptedPOs",
-    "order" : 2,
-    "type" : "counters",
-    "width" : "small",
-    "height" : "medium",
-    "data" : null
-  }, {
-    "id" : "p6_demo.CountRejectedPOs",
-    "order" : 3,
-    "type" : "counters",
-    "width" : "small",
-    "height" : "medium",
-    "data" : null
-  } ]
+    "appKey": "p6_demo",
+    "contentMode": "READ",
+    "description": {"EN": "Demo Home"},
+    "enabled": false,
+    "modules": [
+        {
+            "data": null,
+            "height": "medium",
+            "id": "p6_demo.CountRFQs",
+            "order": 0,
+            "type": "counters",
+            "width": "small"
+        },
+        {
+            "data": null,
+            "height": "medium",
+            "id": "p6_demo.CountQuotes",
+            "order": 1,
+            "type": "counters",
+            "width": "small"
+        },
+        {
+            "data": null,
+            "height": "medium",
+            "id": "p6_demo.CountAcceptedPOs",
+            "order": 2,
+            "type": "counters",
+            "width": "small"
+        },
+        {
+            "data": null,
+            "height": "medium",
+            "id": "p6_demo.CountRejectedPOs",
+            "order": 3,
+            "type": "counters",
+            "width": "small"
+        }
+    ],
+    "name": "Demo Home"
 }

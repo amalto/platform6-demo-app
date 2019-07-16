@@ -1,17 +1,10 @@
 {
-  "name" : "CountFailedRoutingOrders",
-  "appKey" : "p6_demo",
-  "description" : {
-    "EN" : "# of Failed Routing Orders"
-  },
-  "enabled" : true,
-  "contentMode" : "NONE",
-  "lastModifiedBy" : "anonymous",
-  "lastModifiedDate" : 1554129900045,
-  "revisionId" : "d7707c9dc4fc6744807e0882873452a9",
-  "lastSyncDate" : 1554129900045,
-  "value" : 406.0,
-  "type" : "COUNT",
-  "query" : "/routingOrder",
-  "target" : "FailedRoutingOrder"
+    "appKey": "p6_demo",
+    "contentMode": "NONE",
+    "description": {"EN": "# of Failed Routing Orders"},
+    "enabled": true,
+    "name": "CountFailedRoutingOrders",
+    "query": "/routingOrder",
+    "target": "FailedRoutingOrder",
+    "type": "COUNT"
 }
