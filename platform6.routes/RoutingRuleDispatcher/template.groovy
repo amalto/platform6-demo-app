@@ -9,7 +9,7 @@ camel.getCtx().addRoutes(new RouteBuilder() {
                 .when(xpath("/TransactionInfo/TransactionType='Purchase Order'"))
                     .to('direct:p6router.p6_demo_PurchaseOrder')
                 .otherwise()
-                    .throwException(com.amalto.b2box.core.api.B2boxException,'No matching rule found for item!')
+                    .throwException(io.platform6.common.util.P6Exception,'No matching rule found for item!')
             .end()
             .routeId("p6_demo Routing Rules Dispatcher")
             .description("p6_demo Routing Rules Dispatcher")
