@@ -10,7 +10,7 @@ camel.getCtx().addRoutes(new RouteBuilder() {
                     .setProperty('execute.async').constant(true)
                     .to("p6route://platform6.scripts")
                 .otherwise()
-                    .throwException(com.amalto.b2box.core.api.B2boxException,'No matching rule found for item!')
+                    .throwException(io.platform6.common.util.P6Exception,'No matching rule found for item!')
             .end()
             .routeId('p6_demo Routing rules for Quotes')
             .description("p6_demo Routing rules for Quotes")
