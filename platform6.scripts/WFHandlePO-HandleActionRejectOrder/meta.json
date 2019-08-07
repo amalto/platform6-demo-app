@@ -1,6 +1,6 @@
 {
   "description" : {
-    "EN" : "Handle TransactionInfo updates for a Rejected Order - Script called by the HandlePurchaseOrder Workflow Step"
+    "EN" : "Handle PO TransactionInfo updates for a Rejected Order - Script called by the HandlePurchaseOrder Worflow Step"
   },
   "enabled" : false,
   "contentMode" : "READ"

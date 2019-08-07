@@ -1,6 +1,6 @@
 {
   "description" : {
-    "EN" : "WF_RequestForQuotation"
+    "EN" : "Provide the form supporting the creation a Quotation"
   },
   "enabled" : false,
   "contentMode" : "READ"
