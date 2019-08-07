@@ -1,4 +1,4 @@
-camel.getCtx().addRoutes(new RouteBuilder() {
+p6.camel.getCtx().addRoutes(new RouteBuilder() {
 	def void configure() {
 		from("quartz2://platform6/p6route_Count_RFQs?cron=0+1+*+*+*+?+*")
 			.to('p6cmb://counters?platform6.request.action=synchronize&id=p6_demo.CountRFQs')

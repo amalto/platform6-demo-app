@@ -1,4 +1,4 @@
-camel.getCtx().addRoutes(new RouteBuilder() {
+p6.camel.getCtx().addRoutes(new RouteBuilder() {
 
     void configure() {
         from('direct:p6router.p6_demo_RequestForQuotation')

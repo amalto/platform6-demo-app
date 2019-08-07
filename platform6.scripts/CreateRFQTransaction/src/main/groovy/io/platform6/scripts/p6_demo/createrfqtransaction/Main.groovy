@@ -61,7 +61,7 @@ for (int i =0; i< nbLines; i++) {
          <cbc:Quantity unitCode="${uom}">${quantity}</cbc:Quantity>
          <cac:Item>
             <cbc:Description></cbc:Description>
-            <cbc:Name>${escapeXml(category)}</cbc:Name>
+            <cbc:Name>${p6.utils.escapeXml(category)}</cbc:Name>
             <cac:BuyersItemIdentification>
                <cbc:ID>${buyerId}</cbc:ID>
             </cac:BuyersItemIdentification>
@@ -77,8 +77,8 @@ def transactionId = UUID.randomUUID()
 def requestForQuotationUBL = """<RequestForQuotation xmlns="urn:oasis:names:specification:ubl:schema:xsd:RequestForQuotation-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
    <cbc:UBLVersionID>2.0</cbc:UBLVersionID>
    <cbc:ID>${transactionId}</cbc:ID>
-   <cbc:IssueDate>${escapeXml(issueDate)}</cbc:IssueDate>
-   <cbc:IssueTime>${escapeXml(issueTime)}</cbc:IssueTime>
+   <cbc:IssueDate>${p6.utils.escapeXml(issueDate)}</cbc:IssueDate>
+   <cbc:IssueTime>${p6.utils.escapeXml(issueTime)}</cbc:IssueTime>
    <cbc:Note>Automatically generated RFQ</cbc:Note>
    <cac:OriginatorCustomerParty>
       <cac:Party>

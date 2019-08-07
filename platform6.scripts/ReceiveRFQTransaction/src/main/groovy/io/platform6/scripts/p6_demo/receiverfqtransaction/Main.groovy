@@ -65,19 +65,19 @@ def transactionInfo = """<TransactionInfo>
     <OrgPath>/${applicationId}/</OrgPath>
     <KeyValue>
       <Key>Seller Name</Key>
-      <Value>${escapeXml(sellerName)}</Value>
+      <Value>${p6.utils.escapeXml(sellerName)}</Value>
    </KeyValue>
    <KeyValue>
       <Key>Buyer Name</Key>
-      <Value>${escapeXml(buyerName)}</Value>
+      <Value>${p6.utils.escapeXml(buyerName)}</Value>
    </KeyValue>
     <KeyValue>
         <Key>Comment</Key>
-        <Value>${escapeXml(comments)}</Value>
+        <Value>${p6.utils.escapeXml(comments)}</Value>
     </KeyValue>
     <KeyValue>
         <Key>Issue Date</Key>
-        <Value>${escapeXml(issueDate)}</Value>
+        <Value>${p6.utils.escapeXml(issueDate)}</Value>
     </KeyValue>
     <KeyValue>
         <Key>Line items</Key>
