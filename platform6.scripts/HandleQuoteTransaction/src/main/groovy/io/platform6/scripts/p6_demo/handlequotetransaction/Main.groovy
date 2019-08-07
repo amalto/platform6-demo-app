@@ -46,18 +46,18 @@ def orderLines = ''
 quote.QuotationLine.each { myLine ->
 
     orderLines += """<cac:OrderLine>
-    <cbc:Note>${escapeXml(myLine.Note.text())}</cbc:Note>
+    <cbc:Note>${p6.utils.escapeXml(myLine.Note.text())}</cbc:Note>
     <cac:LineItem>
-      <cbc:ID>${escapeXml(myLine.ID.text())}</cbc:ID>
-      <cbc:Quantity unitCode="${escapeXml(myLine.LineItem.Quantity.'@unitCode'.text())}">${escapeXml(myLine.LineItem.Quantity.text())}</cbc:Quantity>
-      <cbc:LineExtensionAmount currencyID="${escapeXml(myLine.LineItem.LineExtensionAmount.'@currencyID'.text())}">${escapeXml(myLine.LineItem.LineExtensionAmount.text())}</cbc:LineExtensionAmount>
+      <cbc:ID>${p6.utils.escapeXml(myLine.ID.text())}</cbc:ID>
+      <cbc:Quantity unitCode="${p6.utils.escapeXml(myLine.LineItem.Quantity.'@unitCode'.text())}">${p6.utils.escapeXml(myLine.LineItem.Quantity.text())}</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="${p6.utils.escapeXml(myLine.LineItem.LineExtensionAmount.'@currencyID'.text())}">${p6.utils.escapeXml(myLine.LineItem.LineExtensionAmount.text())}</cbc:LineExtensionAmount>
       <cac:Price>
-        <cbc:PriceAmount currencyID="${escapeXml(myLine.LineItem.Price.PriceAmount.'@currencyID'.text())}">${escapeXml(myLine.LineItem.Price.PriceAmount.text())}</cbc:PriceAmount>
-        <cbc:BaseQuantity unitCode="${escapeXml(myLine.LineItem.Price.BaseQuantity.'@unitCode'.text())}">${escapeXml(myLine.LineItem.Price.BaseQuantity.text())}</cbc:BaseQuantity>
+        <cbc:PriceAmount currencyID="${p6.utils.escapeXml(myLine.LineItem.Price.PriceAmount.'@currencyID'.text())}">${p6.utils.escapeXml(myLine.LineItem.Price.PriceAmount.text())}</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="${p6.utils.escapeXml(myLine.LineItem.Price.BaseQuantity.'@unitCode'.text())}">${p6.utils.escapeXml(myLine.LineItem.Price.BaseQuantity.text())}</cbc:BaseQuantity>
       </cac:Price>
       <cac:Item>
-        <cbc:Description>${escapeXml(myLine.LineItem.Item.Description.text())}</cbc:Description>
-        <cbc:Name>${escapeXml(myLine.LineItem.Item.Name.text())}</cbc:Name>
+        <cbc:Description>${p6.utils.escapeXml(myLine.LineItem.Item.Description.text())}</cbc:Description>
+        <cbc:Name>${p6.utils.escapeXml(myLine.LineItem.Item.Name.text())}</cbc:Name>
       </cac:Item>
     </cac:LineItem>
   </cac:OrderLine>
@@ -73,9 +73,9 @@ def orderContent = """<?xml version="1.0" encoding="UTF-8"?>
   <cbc:CustomizationID>urn:www.cenbii.eu:transaction:biicoretrdm001:ver1.0</cbc:CustomizationID>
   <cbc:ProfileID schemeAgencyID="BII" schemeID="Profile"
     >urn:www.cenbii.eu:profile:BII01:ver1.0</cbc:ProfileID>
-  <cbc:ID>${escapeXml(purchaseOrderId)}</cbc:ID>
-  <cbc:IssueDate>${escapeXml(issueDate)}</cbc:IssueDate>
-   <cbc:IssueTime>${escapeXml(issueTime)}</cbc:IssueTime>
+  <cbc:ID>${p6.utils.escapeXml(purchaseOrderId)}</cbc:ID>
+  <cbc:IssueDate>${p6.utils.escapeXml(issueDate)}</cbc:IssueDate>
+   <cbc:IssueTime>${p6.utils.escapeXml(issueTime)}</cbc:IssueTime>
   <cbc:Note>Information text for the whole order</cbc:Note>
   <cbc:DocumentCurrencyCode>SEK</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>Project123</cbc:AccountingCostCode>
@@ -102,7 +102,7 @@ def orderContent = """<?xml version="1.0" encoding="UTF-8"?>
         <cbc:ID>PartyID123</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>${escapeXml(buyerName)}</cbc:Name>
+        <cbc:Name>${p6.utils.escapeXml(buyerName)}</cbc:Name>
       </cac:PartyName>
       <cac:PostalAddress>
         <cbc:ID schemeAgencyID="9" schemeID="GLN">1234567890123</cbc:ID>
@@ -138,7 +138,7 @@ def orderContent = """<?xml version="1.0" encoding="UTF-8"?>
         <cbc:ID>SellerPartyID123</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>${escapeXml(sellerName)}</cbc:Name>
+        <cbc:Name>${p6.utils.escapeXml(sellerName)}</cbc:Name>
       </cac:PartyName>
       <cac:PostalAddress>
         <cbc:ID schemeAgencyID="9" schemeID="GLN">0987654321123</cbc:ID>
@@ -178,7 +178,7 @@ def orderContent = """<?xml version="1.0" encoding="UTF-8"?>
     </cac:Party>
   </cac:OriginatorCustomerParty>
   <cac:AnticipatedMonetaryTotal>
-    <cbc:PayableAmount currencyID ="${escapeXml(totalCurrency)}">${escapeXml(totalAmount)}</cbc:PayableAmount>
+    <cbc:PayableAmount currencyID ="${p6.utils.escapeXml(totalCurrency)}">${p6.utils.escapeXml(totalAmount)}</cbc:PayableAmount>
   </cac:AnticipatedMonetaryTotal>
   ${orderLines}
 </Order>
@@ -220,19 +220,19 @@ def transactionInfo = """<TransactionInfo>
     <OrgPath>/${applicationId}/</OrgPath>
     <KeyValue>
       <Key>Seller Name</Key>
-      <Value>${escapeXml(sellerName)}</Value>
+      <Value>${p6.utils.escapeXml(sellerName)}</Value>
    </KeyValue>
    <KeyValue>
       <Key>Buyer Name</Key>
-      <Value>${escapeXml(buyerName)}</Value>
+      <Value>${p6.utils.escapeXml(buyerName)}</Value>
    </KeyValue>
     <KeyValue>
         <Key>Comment</Key>
-        <Value>${escapeXml(comments)}</Value>
+        <Value>${p6.utils.escapeXml(comments)}</Value>
     </KeyValue>
     <KeyValue>
         <Key>Issue Date</Key>
-        <Value>${escapeXml(issueDate)}</Value>
+        <Value>${p6.utils.escapeXml(issueDate)}</Value>
     </KeyValue>
     <KeyValue>
         <Key>Line items</Key>
@@ -240,11 +240,11 @@ def transactionInfo = """<TransactionInfo>
     </KeyValue>
        <KeyValue>
       <Key>Total Amount</Key>
-      <Value>${escapeXml(totalAmount)}</Value>
+      <Value>${p6.utils.escapeXml(totalAmount)}</Value>
    </KeyValue>
       <KeyValue>
       <Key>Currency</Key>
-      <Value>${escapeXml(totalCurrency)}</Value>
+      <Value>${p6.utils.escapeXml(totalCurrency)}</Value>
    </KeyValue>
     <KeyValue>
       <Key>Application</Key>

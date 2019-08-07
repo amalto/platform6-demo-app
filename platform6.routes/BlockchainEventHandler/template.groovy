@@ -1,7 +1,7 @@
-def ethClientURL = appconfig.get('p6_demo', 'ethClientURL')
-def contractAddress =  appconfig.get('p6_demo', 'contractAddress')
+def ethClientURL = p6.appconfig.get('p6_demo', 'ethClientURL')
+def contractAddress =  p6.appconfig.get('p6_demo', 'contractAddress')
 
-camel.getCtx().addRoutes(new RouteBuilder() {
+p6.camel.getCtx().addRoutes(new RouteBuilder() {
     void configure() {
         from("web3j://" + ethClientURL + "?address=" + contractAddress + "&operation=ETH_LOG_FLOWABLE")
             .to("p6cmb://scripts?platform6.request.action=execute&id=p6_demo.BlockchainEventHandler")

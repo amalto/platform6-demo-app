@@ -60,8 +60,8 @@ class RFQSmartContractHelper {
 
     TransactionReceipt submitRFQ(UUID id, ZonedDateTime now, String ubl) {
         return smartContract.submitRFQ(
-            context.conversion.getBytesFromUUID(id),
-            context.conversion.zdtToBigInteger(now),
+            context.p6.conversion.getBytesFromUUID(id),
+            context.p6.conversion.zdtToBigInteger(now),
             ubl).send()
     }
 

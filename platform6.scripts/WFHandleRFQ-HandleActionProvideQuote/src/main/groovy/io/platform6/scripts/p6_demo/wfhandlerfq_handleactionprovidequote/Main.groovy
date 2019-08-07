@@ -87,19 +87,19 @@ rfq.RequestForQuotationLine.each { myLine ->
     totalCurrency = itemDetail.currency
     
     quotationLines +=  """<cac:QuotationLine>
-      <cbc:ID>${escapeXml(myLine.ID.text())}</cbc:ID>
-      <cbc:Note>${escapeXml(myLine.Note.text())}</cbc:Note>
+      <cbc:ID>${p6.utils.escapeXml(myLine.ID.text())}</cbc:ID>
+      <cbc:Note>${p6.utils.escapeXml(myLine.Note.text())}</cbc:Note>
       <cac:LineItem>
-        <cbc:ID>${escapeXml(myLine.LineItem.ID.text())}</cbc:ID>
-        <cbc:Quantity unitCode="${escapeXml(myLine.LineItem.Quantity.'@unitCode'.text())}">${escapeXml(myLine.LineItem.Quantity.text())}</cbc:Quantity>
-        <cbc:LineExtensionAmount currencyID="${escapeXml(itemDetail.currency)}">${escapeXml(ubl_df.format(lineAmmount))}</cbc:LineExtensionAmount>
+        <cbc:ID>${p6.utils.escapeXml(myLine.LineItem.ID.text())}</cbc:ID>
+        <cbc:Quantity unitCode="${p6.utils.escapeXml(myLine.LineItem.Quantity.'@unitCode'.text())}">${p6.utils.escapeXml(myLine.LineItem.Quantity.text())}</cbc:Quantity>
+        <cbc:LineExtensionAmount currencyID="${p6.utils.escapeXml(itemDetail.currency)}">${p6.utils.escapeXml(ubl_df.format(lineAmmount))}</cbc:LineExtensionAmount>
         <cac:Price>
-          <cbc:PriceAmount currencyID="${escapeXml(itemDetail.currency)}">${escapeXml(ubl_df.format(unitPrice))}</cbc:PriceAmount>
-          <cbc:BaseQuantity unitCode="${escapeXml(itemDetail.uom)}">1</cbc:BaseQuantity>
+          <cbc:PriceAmount currencyID="${p6.utils.escapeXml(itemDetail.currency)}">${p6.utils.escapeXml(ubl_df.format(unitPrice))}</cbc:PriceAmount>
+          <cbc:BaseQuantity unitCode="${p6.utils.escapeXml(itemDetail.uom)}">1</cbc:BaseQuantity>
         </cac:Price>
         <cac:Item>
-          <cbc:Description>${escapeXml(inputLine.item)}</cbc:Description>
-          <cbc:Name>${escapeXml(myLine.LineItem.Item.Name.text())}</cbc:Name>
+          <cbc:Description>${p6.utils.escapeXml(inputLine.item)}</cbc:Description>
+          <cbc:Name>${p6.utils.escapeXml(myLine.LineItem.Item.Name.text())}</cbc:Name>
         </cac:Item>
       </cac:LineItem>
     </cac:QuotationLine>
@@ -111,16 +111,16 @@ def quoteUBL = """<?xml version="1.0" encoding="UTF-8"?>
   <cbc:UBLVersionID>2.0</cbc:UBLVersionID>
   <cbc:CustomizationID>OIOUBL-2.1</cbc:CustomizationID>
   <cbc:ProfileID schemeAgencyID="320" schemeID="urn:oioubl:id:profileid-1.2">Procurement-QuoSim-1.0</cbc:ProfileID>
-  <cbc:ID>${escapeXml(quoteId)}</cbc:ID>
+  <cbc:ID>${p6.utils.escapeXml(quoteId)}</cbc:ID>
   <cbc:CopyIndicator>false</cbc:CopyIndicator>
-  <cbc:UUID>${escapeXml(quoteId)}</cbc:UUID>
-  <cbc:IssueDate>${escapeXml(issueDate)}</cbc:IssueDate>
-  <cbc:IssueTime>${escapeXml(issueTime)}</cbc:IssueTime>
+  <cbc:UUID>${p6.utils.escapeXml(quoteId)}</cbc:UUID>
+  <cbc:IssueDate>${p6.utils.escapeXml(issueDate)}</cbc:IssueDate>
+  <cbc:IssueTime>${p6.utils.escapeXml(issueTime)}</cbc:IssueTime>
   <cbc:Note languageID="da-dk">Bestilling af computere</cbc:Note>
   <cac:RequestForQuotationDocumentReference>
     <cbc:ID>G867B</cbc:ID>
-	<cbc:UUID>${escapeXml(rfqId)}</cbc:UUID>
-	<cbc:IssueDate>${escapeXml(rfqIssueDate)}</cbc:IssueDate>
+	<cbc:UUID>${p6.utils.escapeXml(rfqId)}</cbc:UUID>
+	<cbc:IssueDate>${p6.utils.escapeXml(rfqIssueDate)}</cbc:IssueDate>
   </cac:RequestForQuotationDocumentReference>
   <cac:SellerSupplierParty>
     <cbc:CustomerAssignedAccountID>LEV00123</cbc:CustomerAssignedAccountID>
@@ -130,7 +130,7 @@ def quoteUBL = """<?xml version="1.0" encoding="UTF-8"?>
         <cbc:ID schemeID="DK:CVR">DK18296799</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>${escapeXml(sellerName)}</cbc:Name>
+        <cbc:Name>${p6.utils.escapeXml(sellerName)}</cbc:Name>
       </cac:PartyName>
       <cac:PostalAddress>
         <cbc:AddressFormatCode listAgencyID="320" listID="urn:oioubl:codelist:addressformatcode-1.1">StructuredDK</cbc:AddressFormatCode>
@@ -155,7 +155,7 @@ def quoteUBL = """<?xml version="1.0" encoding="UTF-8"?>
         <cbc:ID schemeAgencyID="9" schemeID="GLN">5798000416604</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
-        <cbc:Name>${escapeXml(buyerName)}</cbc:Name>
+        <cbc:Name>${p6.utils.escapeXml(buyerName)}</cbc:Name>
       </cac:PartyName>
       <cac:PostalAddress>
         <cbc:AddressFormatCode listAgencyID="320" listID="urn:oioubl:codelist:addressformatcode-1.1">StructuredDK</cbc:AddressFormatCode>
@@ -174,7 +174,7 @@ def quoteUBL = """<?xml version="1.0" encoding="UTF-8"?>
     </cac:Party>
   </cac:OriginatorCustomerParty>
 	<cac:QuotedMonetaryTotal>
-    <cbc:PayableAmount currencyID ="${escapeXml(totalCurrency)}">${escapeXml(ubl_df.format(totalAmount))}</cbc:PayableAmount>
+    <cbc:PayableAmount currencyID ="${p6.utils.escapeXml(totalCurrency)}">${p6.utils.escapeXml(ubl_df.format(totalAmount))}</cbc:PayableAmount>
   </cac:QuotedMonetaryTotal>
   ${quotationLines}
 </Quotation>
@@ -195,10 +195,10 @@ FileUtils.writeStringToFile(sourceFile, quoteUBL,'UTF-8')
 def applicationId = 'DemoApp_Dev'
 
 def newTransactionInfo = """<TransactionInfo>
-    <Id>${escapeXml(quoteId)}</Id>
-    <CreationDate>${escapeXml(formattedDate)}</CreationDate>
-    <TransactionType>${escapeXml(transactionType)}</TransactionType>
-    <TransactionNumber>${escapeXml(quoteId)}</TransactionNumber>
+    <Id>${p6.utils.escapeXml(quoteId)}</Id>
+    <CreationDate>${p6.utils.escapeXml(formattedDate)}</CreationDate>
+    <TransactionType>${p6.utils.escapeXml(transactionType)}</TransactionType>
+    <TransactionNumber>${p6.utils.escapeXml(quoteId)}</TransactionNumber>
     <SourceSystem>Demo App</SourceSystem>
     <TargetSystem/>
     <Sender/>
@@ -206,37 +206,37 @@ def newTransactionInfo = """<TransactionInfo>
     <TransferProtocol>Blockchain</TransferProtocol>
     <DeliveredVia>Amalto</DeliveredVia>
     <SourceDocumentFormat>UBL</SourceDocumentFormat>
-    <SourceDocumentURI>${escapeXml(sourceURI)}</SourceDocumentURI>
+    <SourceDocumentURI>${p6.utils.escapeXml(sourceURI)}</SourceDocumentURI>
     <SourceDocumentContentType>text/xml; charset=utf-8</SourceDocumentContentType>
     <PivotDocumentFormat>UBL</PivotDocumentFormat>
-    <PivotDocumentURI>${escapeXml(sourceURI)}</PivotDocumentURI>
+    <PivotDocumentURI>${p6.utils.escapeXml(sourceURI)}</PivotDocumentURI>
     <PivotDocumentContentType>text/xml; charset=utf-8</PivotDocumentContentType>
     <TargetDocumentFormat>UBL</TargetDocumentFormat>
-    <TargetDocumentURI>${escapeXml(sourceURI)}</TargetDocumentURI>
+    <TargetDocumentURI>${p6.utils.escapeXml(sourceURI)}</TargetDocumentURI>
     <TargetDocumentContentType>text/xml; charset=utf-8</TargetDocumentContentType>
-    <TechnicalStatusCode>${escapeXml(status)}</TechnicalStatusCode>
-    <TechnicalStatusMessage>${escapeXml(statusMessage)}</TechnicalStatusMessage>
-    <TechnicalStatusDate>${escapeXml(formattedDate)}</TechnicalStatusDate>
+    <TechnicalStatusCode>${p6.utils.escapeXml(status)}</TechnicalStatusCode>
+    <TechnicalStatusMessage>${p6.utils.escapeXml(statusMessage)}</TechnicalStatusMessage>
+    <TechnicalStatusDate>${p6.utils.escapeXml(formattedDate)}</TechnicalStatusDate>
     <FunctionalStatusCode/>
     <FunctionalStatusMessage/>
     <FunctionalStatusDate/>
     <Flags>{"aavisible": true}</Flags>
-    <OrgPath>/${escapeXml(applicationId)}/</OrgPath>
+    <OrgPath>/${p6.utils.escapeXml(applicationId)}/</OrgPath>
     <KeyValue>
       <Key>Seller Name</Key>
-      <Value>${escapeXml(sellerName)}</Value>
+      <Value>${p6.utils.escapeXml(sellerName)}</Value>
     </KeyValue>
     <KeyValue>
       <Key>Buyer Name</Key>
-      <Value>${escapeXml(buyerName)}</Value>
+      <Value>${p6.utils.escapeXml(buyerName)}</Value>
     </KeyValue>
     <KeyValue>
         <Key>Comment</Key>
-        <Value>${escapeXml(comments)}</Value>
+        <Value>${p6.utils.escapeXml(comments)}</Value>
     </KeyValue>
     <KeyValue>
         <Key>Issue Date</Key>
-        <Value>${escapeXml(issueDate)}</Value>
+        <Value>${p6.utils.escapeXml(issueDate)}</Value>
     </KeyValue>
     <KeyValue>
         <Key>Line items</Key>
@@ -244,11 +244,11 @@ def newTransactionInfo = """<TransactionInfo>
     </KeyValue>
        <KeyValue>
       <Key>Total Amount</Key>
-      <Value>${escapeXml(ubl_df.format(totalAmount))}</Value>
+      <Value>${p6.utils.escapeXml(ubl_df.format(totalAmount))}</Value>
    </KeyValue>
       <KeyValue>
       <Key>Currency</Key>
-      <Value>${escapeXml(totalCurrency)}</Value>
+      <Value>${p6.utils.escapeXml(totalCurrency)}</Value>
    </KeyValue>
     <KeyValue>
       <Key>Application</Key>

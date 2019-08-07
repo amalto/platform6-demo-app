@@ -20,7 +20,7 @@ def stepXml = p6.pipeline.get '_wf_stepXml'
 def statusMap = p6.workflow.localeText stepXml, "StatusLabels/Label[@name='" + p6.pipeline.get('_wf_statusId') + "']"
 p6.pipeline.put 'Status', statusMap, 'application/b2box.i18n'
 
-def assigneeMap = workflow.localeText stepXml, 'Assignee/Label'
+def assigneeMap = p6.workflow.localeText stepXml, 'Assignee/Label'
 p6.pipeline.put 'AssignedTo', assigneeMap, 'application/b2box.i18n'
-p6.pipeline.put '_ASSIGNEDTONAME', pipeline.get('_wf_assignedToId'), 'text/plain'
+p6.pipeline.put '_ASSIGNEDTONAME', p6.pipeline.get('_wf_assignedToId'), 'text/plain'
 p6.pipeline.put 'StartDate', p6.pipeline.get('_wf_instanceStartDate'), 'text/plain'
