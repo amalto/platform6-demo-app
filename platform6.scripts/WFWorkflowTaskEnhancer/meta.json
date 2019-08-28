@@ -1,6 +1,6 @@
 {
   "description" : {
-    "EN" : "WF_WorkItemEnhancer"
+    "EN" : "Add Attributes to Workflow Tasks"
   },
   "enabled" : false,
   "contentMode" : "READ"
