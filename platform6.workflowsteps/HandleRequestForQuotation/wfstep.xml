@@ -19,7 +19,7 @@
 
     <Ttl id="expire">120</Ttl>
     
-	<WorkItem script="p6_demo.WFWorkItemEnhancer"/>
+	<WorkItem script="p6_demo.WFWorkflowTaskEnhancer"/>
     
     <Assignee name="DemoApp" path="/${INSTANCE_ID}" type="UNIT" scope="*=*">
         <Label>

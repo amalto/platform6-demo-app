@@ -5,9 +5,7 @@ p6.sproc.execute('p6_demo.DeleteP6DemoTransactions')
 log.debug 'Demo app transactions and workflow tasks deleted'
 
 // Restart services
-p6.service.restartService('platform6.workflowsteps')
 p6.service.restartService('platform6.views')
-p6.service.restartService('platform6.transactions')
 log.debug 'Services restarted to finish cleaning up transaction data'
 
 // Destroy routes

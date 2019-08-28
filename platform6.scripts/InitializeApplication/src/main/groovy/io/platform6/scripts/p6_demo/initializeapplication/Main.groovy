@@ -46,11 +46,8 @@ p6.appconfig.save("p6_demo", [
     "contractAddress": contract.getContractAddress(),
 ])
 
-// Restart services to activate routes and workflow steps
-p6.service.restartService('platform6.workflowsteps')
-p6.service.restartService('platform6.routes')
+// Restart services to activate views
 p6.service.restartService('platform6.views')
-p6.service.restartService('platform6.transactions')
 log.debug 'Services restarted to loads routes and workflow steps'
 
 log.debug 'Demo app initialized successfully!'
