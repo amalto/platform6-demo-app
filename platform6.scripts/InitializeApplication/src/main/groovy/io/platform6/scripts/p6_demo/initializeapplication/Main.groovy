@@ -20,7 +20,7 @@ def csvFile = [ skipLines: 0, separator: ',', useFirstLineHeaders: true, uri: "f
 p6.csv.parse(csvFile) { row ->
     def records = new ArrayList()
     records[0] = row
-    table.upsert('p6_demo.Items', records)
+    p6.table.upsert('p6_demo.Items', records)
     true
 }
 log.debug 'Populated the Items table from the CSV file'
