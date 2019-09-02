@@ -46,8 +46,6 @@ p6.appconfig.save("p6_demo", [
     "contractAddress": contract.getContractAddress(),
 ])
 
-// Restart services to activate views
-p6.service.restartService('platform6.views')
-log.debug 'Services restarted to loads routes and workflow steps'
-
+// Notify P6 that installation was successful
 log.debug 'Demo app initialized successfully!'
+p6.pipeline.put("installScriptResult", "true")

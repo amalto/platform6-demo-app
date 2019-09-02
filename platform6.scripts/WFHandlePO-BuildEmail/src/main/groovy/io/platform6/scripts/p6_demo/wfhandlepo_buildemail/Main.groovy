@@ -24,7 +24,7 @@ if ('dev'.equals(INSTANCE_ID)) {
 }
 
 def htmlLink = "https://$portalBaseURL/#/edit-transaction/$INSTANCE_ID/p6_demo.Transactions/"+URLEncoder.encode('["'+transactionId+'"]', 'utf-8')
-pipeline.put 'href', htmlLink, 'text/plain'
+p6.pipeline.put 'href', htmlLink, 'text/plain'
 
 def docNumber = transactionInfo.BusinessDocNumber.text()
 def totalAmount = transactionInfo.KeyValue.find{it.Key == 'Total Amount'}.Value.text()

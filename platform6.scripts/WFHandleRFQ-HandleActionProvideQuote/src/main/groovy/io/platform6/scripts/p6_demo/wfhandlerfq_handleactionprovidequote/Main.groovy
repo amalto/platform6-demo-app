@@ -49,7 +49,7 @@ def sellerName = rfq.SellerSupplierParty.Party.PartyName.Name.text()
 def buyerName = rfq.OriginatorCustomerParty.Party.PartyName.Name.text()
 def rfqIssueDate = rfq.IssueDate.text()
 
-transaction.save(groovy.xml.XmlUtil.serialize(transactionInfo), 'p6_demo.TransactionInfo', rfqPk)
+p6.transaction.save(groovy.xml.XmlUtil.serialize(transactionInfo), 'p6_demo.TransactionInfo', rfqPk)
 
 def linesContent = p6.pipeline.get 'lines'
 
