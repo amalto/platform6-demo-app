@@ -14,7 +14,7 @@ if (eventHash == RFQSmartContractHelper.RFQReceivedEventHash) {
     def (rfqId, issuedAt, ubl) = helper.readRFQReceivedEvent(topics, data)
 
     p6.pipeline.put("ubl", ubl)
-    p6.control.call 'p6_demo.ReceiveRFQTransaction'
+    p6.script.call 'p6_demo.ReceiveRFQTransaction'
 }
 else if (eventHash == RFQSmartContractHelper.RFQDeclinedEventHash) {
     def (supplier, rfqId, quoteId, issuedAt) = helper.readRFQDeclinedEvent(topics, data)
@@ -25,5 +25,5 @@ else if (eventHash == RFQSmartContractHelper.QuoteReceivedEventHash) {
     def (supplier, rfqId, quoteId, issuedAt, ubl) = helper.readQuoteReceivedEvent(topics, data)
 
     p6.pipeline.put("ubl", ubl)
-    p6.control.call 'p6_demo.HandleQuoteTransaction'
+    p6.script.call 'p6_demo.HandleQuoteTransaction'
 }
