@@ -2,6 +2,6 @@
   "description" : {
     "EN" : "RFQ Smart Contract Helper"
   },
-  "enabled" : false,
+  "enabled" : true,
   "contentMode" : "READ"
 }

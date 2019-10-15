@@ -13,7 +13,6 @@ import org.web3j.abi.datatypes.Type
 import org.web3j.crypto.*
 import org.web3j.protocol.core.methods.response.TransactionReceipt
 import org.web3j.tx.*
-import org.web3j.tx.response.PollingTransactionReceiptProcessor
 import org.web3j.utils.Numeric
 
 
@@ -47,8 +46,7 @@ class RFQSmartContractHelper {
         this.web3j = context.p6.ethereumrpc.build(ethClientURL)
 
         // Define a custom transaction manager with a polling frequency of 2 seconds
-        def processor = new PollingTransactionReceiptProcessor(web3j, 2000L, TransactionManager.DEFAULT_POLLING_ATTEMPTS_PER_TX_HASH)
-        def transactionManager = new RawTransactionManager(web3j, readCredentials(), ChainIdLong.NONE, processor)
+        def transactionManager = context.p6.ethereumrpc.pollingTransactionManager(web3j, readCredentials(), 2000L)
 
         def contractAddress = context.p6.table.lookup('p6_demo.AppConfig', [key: 'contractAddress']).value[0]
         this.smartContract = RequestForQuotations.load(contractAddress, web3j, transactionManager, context.p6.ethereumrpc.DEFAULT_GAS_PROVIDER)

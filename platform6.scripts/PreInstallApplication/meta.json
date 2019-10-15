@@ -1,0 +1,7 @@
+{
+  "description" : {
+    "EN" : "Pre install application script where bundled resources get deployed"
+  },
+  "enabled" : true,
+  "contentMode" : "READ"
+}

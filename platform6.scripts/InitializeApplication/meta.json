@@ -1,7 +1,0 @@
-{
-  "description" : {
-    "EN" : "Deploy Bundled Resources and initialize Tables"
-  },
-  "enabled" : false,
-  "contentMode" : "READ"
-}

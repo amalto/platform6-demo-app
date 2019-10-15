@@ -1,0 +1,7 @@
+{
+  "description" : {
+    "EN" : "Script to deploy the demo smart contract and initialize tables"
+  },
+  "enabled" : true,
+  "contentMode" : "READ"
+}

@@ -1,17 +1,7 @@
 // This script is launched when the application is installed on the instance
-
-
 import io.platform6.demo.sc.RequestForQuotations
 
 import org.web3j.tx.*
-import org.web3j.tx.response.PollingTransactionReceiptProcessor
-
-
-// Deploy (copy to local file system) bundled resources
-p6.bundled.deploy('p6_demo.DemoSmartContract')
-p6.bundled.deploy('p6_demo.POReview')
-p6.bundled.deploy('p6_demo.TableItemsData')
-log.debug 'Loaded bundled resources'
 
 // Populate the Items table from the provided CSV file
 String P6_TMP = System.getenv('B2BOX_TMP')
@@ -36,8 +26,7 @@ def web3j = p6.ethereumrpc.build(ethClientURL)
 def credentials = p6.ethereumrpc.getCredentials("p6_demo.AppConfig", [key: "demoWallet"], "value", "ADummyPassword")
 
 // Define a custom transaction manager with a polling frequency of 2 seconds
-def processor = new PollingTransactionReceiptProcessor(web3j, 2000L, TransactionManager.DEFAULT_POLLING_ATTEMPTS_PER_TX_HASH)
-def tm = new RawTransactionManager(web3j, credentials, ChainIdLong.NONE, processor)
+def tm = p6.ethereumrpc.pollingTransactionManager(web3j, credentials, 2000L)
 def contract = RequestForQuotations.deploy(web3j, tm, p6.ethereumrpc.DEFAULT_GAS_PROVIDER).send()
 
 // Save the contract address and Ethereum client URL in config table
