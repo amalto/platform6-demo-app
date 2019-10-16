@@ -4,7 +4,7 @@
   },
   "enabled" : false,
   "contentMode" : "NONE",
-  "targetRoot" : "${B2BOX_DATA}",
+  "targetRoot" : "${P6_DATA}",
   "targetPath" : "/resources/templates/p6demo_POReview.ftl",
   "props" : { }
 }
