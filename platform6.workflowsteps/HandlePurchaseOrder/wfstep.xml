@@ -16,7 +16,7 @@
     <AllowApproverDelegation>false</AllowApproverDelegation>
     
     <SendEmails>true</SendEmails>
-    <EmailTemplate modelScript="p6_demo.WFHandlePO-BuildEmail">file://${B2BOX_DATA}/resources/templates/p6demo_POReview.ftl</EmailTemplate>
+    <EmailTemplate modelScript="p6_demo.WFHandlePO-BuildEmail">file://${P6_DATA}/resources/templates/p6demo_POReview.ftl</EmailTemplate>
     
     <Ttl id="expire">120</Ttl>
     
