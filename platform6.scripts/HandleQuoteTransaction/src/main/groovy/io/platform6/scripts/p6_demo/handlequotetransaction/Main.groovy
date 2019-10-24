@@ -15,7 +15,7 @@ def quoteContent = p6.pipeline.get 'ubl'
 XmlSlurper slurper = new XmlSlurper(false, true)
 def quote = slurper.parseText(quoteContent)
 
-def applicationId = 'DemoAp_Dev'
+def instanceId = p6.configuration.get("instance.id")
 
 // Calculate issue date and time
 def now = helper.now()
@@ -217,7 +217,7 @@ def transactionInfo = """<TransactionInfo>
     <FunctionalStatusMessage/>
     <FunctionalStatusDate/>
     <Flags>{"aavisible": true}</Flags>
-    <OrgPath>/${applicationId}/</OrgPath>
+    <OrgPath>/${instanceId}/</OrgPath>
     <KeyValue>
       <Key>Seller Name</Key>
       <Value>${p6.utils.escapeXml(sellerName)}</Value>

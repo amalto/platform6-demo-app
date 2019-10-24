@@ -4,7 +4,7 @@ p6.pipeline.put 'Subject', 'Platform 6 Demo App - Purchase Order to review'
 
 p6.pipeline.put 'From', 'no-reply@platform6.io'
 
-def INSTANCE_ID = p6.configuration.get("applicationid")
+def instanceId = p6.configuration.get("instance.id")
 
 def dataType = p6.pipeline.get 'platform6.request.dataType'
 def itemIds = p6.pipeline.get 'platform6.request.ids'
@@ -19,7 +19,7 @@ def transactionInfo = slurper.parseText(transactionInfoContent)
 def transactionId = transactionInfo.Id.text()
 
 def portalBaseURL = 'portal.platform6.io'
-if ('dev'.equals(INSTANCE_ID)) {
+if ('dev'.equals(instanceId)) {
     portalBaseURL = 'dev.portal.amalto.com'
 }
 

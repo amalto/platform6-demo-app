@@ -7,7 +7,7 @@ def rfqContent = p6.pipeline.get 'ubl'
 XmlSlurper slurper = new XmlSlurper(false, true)
 def rfq = slurper.parseText(rfqContent)
 
-def applicationId = 'DemoApp'
+def instanceId = p6.configuration.get("instance.id")
 
 def currentDate = new Date()
 SimpleDateFormat transactionSDF = new SimpleDateFormat("yyyyMMdd'T'HH:mm:ss")
@@ -62,7 +62,7 @@ def transactionInfo = """<TransactionInfo>
     <FunctionalStatusMessage/>
     <FunctionalStatusDate/>
     <Flags>{"aavisible": true}</Flags>
-    <OrgPath>/${applicationId}/</OrgPath>
+    <OrgPath>/${instanceId}/</OrgPath>
     <KeyValue>
       <Key>Seller Name</Key>
       <Value>${p6.utils.escapeXml(sellerName)}</Value>

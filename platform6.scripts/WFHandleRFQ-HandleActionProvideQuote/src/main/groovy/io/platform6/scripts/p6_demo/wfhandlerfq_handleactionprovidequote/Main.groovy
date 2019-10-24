@@ -192,7 +192,7 @@ def sourceURI = "file://$P6_DATA/resources/documents/" + transactionType + "/" +
 def  sourceFile = p6.uri.fileFromUrl(sourceURI)
 FileUtils.writeStringToFile(sourceFile, quoteUBL,'UTF-8')
 
-def applicationId = 'DemoApp_Dev'
+def instanceId = p6.configuration.get("instance.id")
 
 def newTransactionInfo = """<TransactionInfo>
     <Id>${p6.utils.escapeXml(quoteId)}</Id>
@@ -221,7 +221,7 @@ def newTransactionInfo = """<TransactionInfo>
     <FunctionalStatusMessage/>
     <FunctionalStatusDate/>
     <Flags>{"aavisible": true}</Flags>
-    <OrgPath>/${p6.utils.escapeXml(applicationId)}/</OrgPath>
+    <OrgPath>/${p6.utils.escapeXml(instanceId)}/</OrgPath>
     <KeyValue>
       <Key>Seller Name</Key>
       <Value>${p6.utils.escapeXml(sellerName)}</Value>
