@@ -4,8 +4,7 @@ import io.platform6.demo.sc.RequestForQuotations
 import org.web3j.tx.*
 
 // Populate the Items table from the provided CSV file
-String P6_TMP = System.getenv('P6_TMP')
-def csvFile = [ skipLines: 0, separator: ',', useFirstLineHeaders: true, uri: "file:///$P6_TMP/p6_demo_items.csv" ]
+def csvFile = [ skipLines: 0, separator: ',', useFirstLineHeaders: true, uri: 'file:///${TMP}/p6_demo_items.csv' ]
 
 p6.csv.parse(csvFile) { row ->
     def records = new ArrayList()
