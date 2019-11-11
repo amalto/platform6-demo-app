@@ -1,11 +1,24 @@
-def ethClientURL = p6.appconfig.get('p6_demo', 'ethClientURL')
-def contractAddress =  p6.appconfig.get('p6_demo', 'contractAddress')
+// -------------------------------------------------------------------------------------------
+// Define routes with pre-processing instructions (ie. to define and register beans).
+//
+// Parameters:
+//    preProcessingStatement:   Pre-processing instructions
+//    addRoutes:                The route definitions
+//
+// Example:
+//    p6.camel.registerBean("myBean", ServiceBean )
+//
+// More information on https://documentation.amalto.com/platform6/latest/develop-app/built-in-services/routes/routes-dsl/#groovy-bean-execution
+// -------------------------------------------------------------------------------------------
+
+
+${preProcessingStatement}
 
 p6.camel.getCtx().addRoutes(new RouteBuilder() {
+
     void configure() {
-        from("web3j://" + ethClientURL + "?address=" + contractAddress + "&operation=ETH_LOG_FLOWABLE")
-            .to("p6cmb://scripts?platform6.request.action=execute&id=p6_demo.BlockchainEventHandler")
-            .routeId("p6_demo Web3j - BlockchainEventHandler")
-            .description("p6_demo Blockchain Event Handler")
+
+        ${addRoutes}
+
     }
 })

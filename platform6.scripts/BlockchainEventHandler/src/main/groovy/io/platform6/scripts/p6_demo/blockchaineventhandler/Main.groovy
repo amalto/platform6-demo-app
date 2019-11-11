@@ -4,11 +4,20 @@
  * @include RFQSmartContractHelper
  */
 
+import com.fasterxml.jackson.databind.DeserializationFeature
+import com.fasterxml.jackson.databind.ObjectMapper
+import org.web3j.protocol.core.methods.response.Log
+
+
 def helper = new RFQSmartContractHelper(this)
 
-def topics = p6.pipeline.get('logTopics').split(',')
+def mapper = new ObjectMapper();
+mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+
+def ethLog = mapper.readerFor(Log.class).readValue(p6.pipeline.get('body'))
+def topics = ethLog.getTopics()
 def eventHash = topics[0]
-def data = p6.pipeline.get('logData')
+def data = ethLog.getData()
 
 if (eventHash == RFQSmartContractHelper.RFQReceivedEventHash) {
     def (rfqId, issuedAt, ubl) = helper.readRFQReceivedEvent(topics, data)

@@ -103,7 +103,7 @@ class RFQSmartContractHelper {
 
     final static String RFQReceivedEventHash = EventEncoder.encode(RequestForQuotations.RFQRECEIVED_EVENT)
 
-    Tuple readRFQReceivedEvent(String[] logTopics, String logData) {
+    Tuple readRFQReceivedEvent(List<String> logTopics, String logData) {
         def event = extractEvent(RequestForQuotations.RFQRECEIVED_EVENT, logTopics, logData)
 
         def rfqId = context.p6.conversion.getUUIDFromBytes((byte[]) event.getNonIndexedValues().get(0).getValue())
@@ -115,7 +115,7 @@ class RFQSmartContractHelper {
 
     final static String RFQDeclinedEventHash = EventEncoder.encode(RequestForQuotations.RFQDECLINED_EVENT)
 
-    Tuple readRFQDeclinedEvent(String[] logTopics, String logData) {
+    Tuple readRFQDeclinedEvent(List<String> logTopics, String logData) {
         def event = extractEvent(RequestForQuotations.RFQDECLINED_EVENT, logTopics, logData)
 
         def supplier = (String) event.getIndexedValues().get(0).getValue()
@@ -128,7 +128,7 @@ class RFQSmartContractHelper {
 
     final static String QuoteReceivedEventHash = EventEncoder.encode(RequestForQuotations.QUOTERECEIVED_EVENT)
 
-    Tuple readQuoteReceivedEvent(String[] logTopics, String logData) {
+    Tuple readQuoteReceivedEvent(List<String> logTopics, String logData) {
         def event = extractEvent(RequestForQuotations.QUOTERECEIVED_EVENT, logTopics, logData)
 
         def supplier = (String) event.getIndexedValues().get(0).getValue()
@@ -142,7 +142,7 @@ class RFQSmartContractHelper {
 
     // Event helper methods
 
-    static EventValues extractEvent(Event event, String[] logTopics, String logData) {
+    static EventValues extractEvent(Event event, List<String> logTopics, String logData) {
         String encodedEventSignature = EventEncoder.encode(event)
 
         if (logTopics[0] != encodedEventSignature) {

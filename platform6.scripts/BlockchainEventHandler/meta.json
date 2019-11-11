@@ -2,6 +2,6 @@
   "description" : {
     "EN" : "Handle events received from the blockchain"
   },
-  "enabled" : false,
+  "enabled" : true,
   "contentMode" : "READ"
 }
