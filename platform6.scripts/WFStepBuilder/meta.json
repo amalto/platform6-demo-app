@@ -1,7 +1,0 @@
-{
-  "description" : {
-    "EN" : "Adapt Workflow Steps on the fly leveraging a Workflow Step used as template (optional)"
-  },
-  "enabled" : false,
-  "contentMode" : "READ"
-}

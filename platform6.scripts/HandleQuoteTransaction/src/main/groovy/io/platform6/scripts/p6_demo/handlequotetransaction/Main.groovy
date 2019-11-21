@@ -246,11 +246,7 @@ def transactionInfo = """<TransactionInfo>
       <Key>Currency</Key>
       <Value>${p6.utils.escapeXml(totalCurrency)}</Value>
    </KeyValue>
-    <KeyValue>
-      <Key>Application</Key>
-      <Value>p6_demo</Value>
-   </KeyValue>    
 </TransactionInfo>"""
 
-def ipk = p6.transaction.buildPK('TransactionInfo', purchaseOrderId)
+def ipk = p6.transaction.buildPK('p6_demo.TransactionInfo', purchaseOrderId)
 p6.transaction.saveAndRoute(transactionInfo, 'p6_demo.TransactionInfo', ipk, 'direct:p6router.p6_demo_Dispatcher')

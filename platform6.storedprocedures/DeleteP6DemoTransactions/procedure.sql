@@ -1,7 +1,7 @@
 delete
-from p6core.item
-where xpath_exists('/TransactionInfo/KeyValue[./Key = "Application" and Value="p6_demo"]' , content);
+from p6core.transaction
+where dataType = "p6_demo.TransactionInfo";
 
 delete
-from p6core.item
+from p6core.transaction
 where xpath_exists('/WorkflowTask/flink/view[.="p6_demo.Transactions"]' , content);
