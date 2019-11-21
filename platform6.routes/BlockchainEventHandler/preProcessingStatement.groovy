@@ -9,5 +9,5 @@ class LogToJSON {
 
 p6.camel.registerBean("logToJSON", LogToJSON)
 
-def ethClientURL = p6.appconfig.get('p6_demo', 'ethClientURL')
-def contractAddress =  p6.appconfig.get('p6_demo', 'contractAddress')
+def ethClientURL = p6.appconfig.get('ethClientURL')
+def contractAddress =  p6.appconfig.get('contractAddress')
