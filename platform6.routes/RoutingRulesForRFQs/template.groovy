@@ -9,7 +9,6 @@ p6.camel.getCtx().addRoutes(new RouteBuilder() {
                     .setHeader("step").constant("HandleRequestForQuotation")
                     .setHeader("appkey").constant("p6_demo")
                     .setHeader("flowname").constant("UUID")
-                    .setHeader("script").constant("p6_demo.WFStepBuilder")
                     .to("p6route://platform6.workflowsteps")
                 .otherwise()
                     .throwException(io.platform6.common.util.P6Exception,'No matching rule found for item!')

@@ -10,7 +10,6 @@ p6.camel.getCtx().addRoutes(new RouteBuilder() {
                     .setHeader("step").constant("HandlePurchaseOrder")
                     .setHeader("appkey").constant("p6_demo")
                     .setHeader("flowname").constant("UUID")
-                    .setHeader("script").constant("p6_demo.WFStepBuilder")
                     .to("p6route://platform6.workflowsteps")
             .end()
             .routeId('p6_demo Routing rules for Purchase Orders')

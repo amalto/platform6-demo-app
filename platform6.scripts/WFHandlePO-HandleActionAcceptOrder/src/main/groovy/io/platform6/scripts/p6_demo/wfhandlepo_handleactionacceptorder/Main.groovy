@@ -40,6 +40,6 @@ if (salesordernumber!=null && !''.equals(salesordernumber)) {
 
 def transactionId = transactionInfo.Id.text()
 
-def ipk = p6.transaction.buildPK('TransactionInfo', transactionId)
+def ipk = p6.transaction.buildPK('p6_demo.TransactionInfo', transactionId)
 
 p6.transaction.saveAndRoute(groovy.xml.XmlUtil.serialize(transactionInfo), 'p6_demo.TransactionInfo', ipk, 'direct:p6router.p6_demo_Dispatcher')

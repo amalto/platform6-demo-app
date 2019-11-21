@@ -91,11 +91,7 @@ def transactionInfo = """<TransactionInfo>
       <Key>Currency</Key>
       <Value></Value>
    </KeyValue>
-   <KeyValue>
-      <Key>Application</Key>
-      <Value>p6_demo</Value>
-   </KeyValue>
 </TransactionInfo>"""
 
-def ipk = p6.transaction.buildPK('TransactionInfo', transactionId)
+def ipk = p6.transaction.buildPK('p6_demo.TransactionInfo', transactionId)
 p6.transaction.saveAndRoute(transactionInfo, 'p6_demo.TransactionInfo', ipk, 'direct:p6router.p6_demo_Dispatcher')

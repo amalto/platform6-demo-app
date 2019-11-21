@@ -58,10 +58,6 @@
     "contentMode" : "EDIT"
   }, {
     "serviceId" : "platform6.scripts",
-    "itemId" : "WFStepBuilder",
-    "contentMode" : "EDIT"
-  }, {
-    "serviceId" : "platform6.scripts",
     "itemId" : "RFQSmartContractHelper",
     "contentMode" : "EDIT"
   }, {
