@@ -23,7 +23,7 @@ if ('dev'.equals(instanceId)) {
     portalBaseURL = 'dev.portal.amalto.com'
 }
 
-def htmlLink = "https://$portalBaseURL/#/edit-transaction/$INSTANCE_ID/p6_demo.Transactions/"+URLEncoder.encode('["'+transactionId+'"]', 'utf-8')
+def htmlLink = "https://$portalBaseURL/#/edit-transaction/$instanceId/p6_demo.Transactions/"+URLEncoder.encode('["'+transactionId+'"]', 'utf-8')
 p6.pipeline.put 'href', htmlLink, 'text/plain'
 
 def docNumber = transactionInfo.BusinessDocNumber.text()
