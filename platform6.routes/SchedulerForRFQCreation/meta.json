@@ -2,7 +2,6 @@
   "description" : {
     "EN" : "Scheduled creation of Requests for Quotation"
   },
-  "enabled" : true,
   "contentMode" : "READ",
   "type" : "scheduler",
   "autoStart" : true
