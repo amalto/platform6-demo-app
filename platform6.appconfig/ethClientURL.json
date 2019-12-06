@@ -1,0 +1,10 @@
+{
+    "appKey": "p6_demo",
+    "contentMode": "READ",
+    "description": {
+        "EN": "Ethereum Client URL"
+    },
+    "name": "ethClientURL",
+    "type": "String",
+    "value": "http://172.13.0.20:8545"
+}

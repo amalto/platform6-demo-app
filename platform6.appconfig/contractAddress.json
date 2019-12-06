@@ -1,0 +1,10 @@
+{
+    "appKey": "p6_demo",
+    "contentMode": "READ",
+    "description": {
+        "EN": "Contract Address"
+    },
+    "name": "contractAddress",
+    "type": "String",
+    "value": ""
+}
