@@ -2,6 +2,5 @@
   "description" : {
     "EN" : "Handle RFQ TransactionInfo update and Quote creation - Script called by the HandleRequestForQuotation Workflow Step"
   },
-  "enabled" : false,
   "contentMode" : "READ"
 }

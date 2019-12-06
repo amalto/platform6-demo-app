@@ -2,6 +2,5 @@
   "description" : {
     "EN" : "Handle the reception of a Quote (flip to a PurchaseOrder UBL Document, creation of the corresponding TransactionInfo, storage to file system) - Script called by the BlockchainEventHandler script"
   },
-  "enabled" : false,
   "contentMode" : "READ"
 }

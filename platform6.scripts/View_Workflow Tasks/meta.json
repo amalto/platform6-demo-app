@@ -2,6 +2,5 @@
   "description" : {
     "EN" : "Provide html display of Workflow Tasks"
   },
-  "enabled" : false,
   "contentMode" : "READ"
 }

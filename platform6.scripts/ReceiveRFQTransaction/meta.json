@@ -2,6 +2,5 @@
   "description" : {
     "EN" : "Handle the reception of an RFQ (creation of the RFQ TransactionInfo, storage to file system…) - Script called by the BlockchainEventHandler script"
   },
-  "enabled" : false,
   "contentMode" : "READ"
 }
