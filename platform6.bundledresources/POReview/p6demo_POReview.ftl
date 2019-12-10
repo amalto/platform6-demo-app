@@ -493,57 +493,6 @@
 					<!-- BEGIN TEMPLATE // -->
 					<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 						<tr>
-							<td align="center" valign="top" id="templatePreheader" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #ffffff;border-top: 0;border-bottom: 0;padding-top: 2px;padding-bottom: 2px;">
-								<!--[if gte mso 9]>
-								<table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
-									<tr>
-										<td align="center" valign="top" width="600" style="width:600px;">
-											<![endif]-->
-											<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px !important;">
-												<tr>
-													<td valign="top" class="preheaderContainer" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-														<tbody class="mcnTextBlockOuter">
-															<tr>
-																<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-																	<!--[if mso]>
-																				<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
-																					<tr>
-																			<![endif]-->
-																			
-																			<!--[if mso]>
-																			<td valign="top" width="600" style="width:600px;">
-																				<![endif]-->
-																				<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
-																					<tbody><tr>
-																						
-																						<td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #656565;font-family: Tahoma, Verdana, Segoe, sans-serif;font-size: 10px;line-height: 150%;text-align: left;">
-																							
-																							Your have a new inbound Purchase Order to review.
-																						</td>
-																					</tr>
-																				</tbody></table>
-																				<!--[if mso]>
-																			</td>
-																			<![endif]-->
-																			
-																			<!--[if mso]>
-																		</tr>
-																	</table>
-																	<![endif]-->
-																</td>
-															</tr>
-														</tbody>
-													</table></td>
-												</tr>
-											</table>
-											<!--[if gte mso 9]>
-										</td>
-									</tr>
-								</table>
-								<![endif]-->
-							</td>
-						</tr>
-						<tr>
 							<td align="center" valign="top" id="templateHeader" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #f2f2f2;border-top: 0;border-bottom: 0;padding-top: 20px;padding-bottom: 20px;">
 								<!--[if gte mso 9]>
 								<table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
@@ -561,7 +510,7 @@
 																			<td class="mcnImageContent" valign="top" style="padding-right: 0px;padding-left: 0px;padding-top: 0;padding-bottom: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
                                                                                 
                                                                                 
-                                                                                <img align="center" alt="" src="https://portal.platform6.io/static/login_page/platform6/logo.png" width="260" style="max-width: 260px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage">
+                                                                                <img align="center" alt="" src="https://www.platform6.io/wp-content/uploads/2018/09/logo-platform6-header-retina.png" width="260" style="max-width: 260px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage">
                                                                                 
                                                                                 
                                                                             </td>
