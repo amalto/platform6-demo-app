@@ -2,7 +2,6 @@
   "description" : {
     "EN" : "CSV file to import into table Items"
   },
-  "enabled" : false,
   "contentMode" : "NONE",
   "targetRoot" : "${TMP}",
   "targetPath" : "/p6_demo_items.csv",

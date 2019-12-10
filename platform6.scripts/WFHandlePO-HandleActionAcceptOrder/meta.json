@@ -2,6 +2,5 @@
   "description" : {
     "EN" : "Handle PO TransactionInfo updates for an Accepted Order - Script called by the HandlePurchaseOrder Workflow Step"
   },
-  "enabled" : false,
   "contentMode" : "READ"
 }

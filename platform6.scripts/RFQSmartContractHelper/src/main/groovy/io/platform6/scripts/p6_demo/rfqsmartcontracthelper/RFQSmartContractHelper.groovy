@@ -26,11 +26,6 @@ enum QuoteStatus {
 
 class RFQSmartContractHelper {
 
-    // Constants
-    static def configTableName = "p6_demo.AppConfig"
-    static def credentialKey = [key: "demoWallet"]
-    static def credentialFieldName = "value"
-
     // !!! For demo purposes, don't do this in production! Always ask the user for his/her password or store your private key in a vault/HD wallet!
     static def password = "ADummyPassword"
 
@@ -42,18 +37,18 @@ class RFQSmartContractHelper {
     RFQSmartContractHelper(def context) {
         this.context = context
 
-        def ethClientURL  = context.p6.table.lookup('p6_demo.AppConfig', [key: 'ethClientURL']).value[0]
+        def ethClientURL  = context.p6.appconfig.get('ethClientURL')
         this.web3j = context.p6.ethereumrpc.build(ethClientURL)
 
         // Define a custom transaction manager with a polling frequency of 2 seconds
         def transactionManager = context.p6.ethereumrpc.pollingTransactionManager(web3j, readCredentials(), 2000L)
 
-        def contractAddress = context.p6.table.lookup('p6_demo.AppConfig', [key: 'contractAddress']).value[0]
+        def contractAddress = context.p6.appconfig.get('contractAddress')
         this.smartContract = RequestForQuotations.load(contractAddress, web3j, transactionManager, context.p6.ethereumrpc.DEFAULT_GAS_PROVIDER)
     }
 
     Credentials readCredentials() {
-        return context.p6.ethereumrpc.getCredentials(configTableName, credentialKey, credentialFieldName, password)
+        return context.p6.ethereumrpc.getCredentials(context.p6.appconfig.get("demoWallet"), password)
     }
 
     TransactionReceipt submitRFQ(UUID id, ZonedDateTime now, String ubl) {

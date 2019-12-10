@@ -10,19 +10,15 @@
   "uninstallScriptId" : "UninstallApplication",
   "selectedServiceItems" : [ {
     "serviceId" : "platform6.views",
-    "itemId" : "Transactions",
-    "contentMode" : "EDIT"
-  }, {
-    "serviceId" : "platform6.views",
     "itemId" : "Workflow Tasks",
     "contentMode" : "EDIT"
   }, {
-    "serviceId" : "platform6.routes",
-    "itemId" : "RoutingRuleDispatcher",
+    "serviceId" : "platform6.views",
+    "itemId" : "Transactions",
     "contentMode" : "EDIT"
   }, {
     "serviceId" : "platform6.routes",
-    "itemId" : "SchedulerForRFQCreation",
+    "itemId" : "RoutingRulesForQuotes",
     "contentMode" : "EDIT"
   }, {
     "serviceId" : "platform6.routes",
@@ -30,11 +26,7 @@
     "contentMode" : "EDIT"
   }, {
     "serviceId" : "platform6.routes",
-    "itemId" : "SchedulerForCountersRefresh",
-    "contentMode" : "EDIT"
-  }, {
-    "serviceId" : "platform6.routes",
-    "itemId" : "BlockchainEventHandler",
+    "itemId" : "RoutingRuleDispatcher",
     "contentMode" : "EDIT"
   }, {
     "serviceId" : "platform6.routes",
@@ -42,15 +34,31 @@
     "contentMode" : "EDIT"
   }, {
     "serviceId" : "platform6.routes",
-    "itemId" : "RoutingRulesForQuotes",
+    "itemId" : "SchedulerForCountersRefresh",
+    "contentMode" : "EDIT"
+  }, {
+    "serviceId" : "platform6.routes",
+    "itemId" : "SchedulerForRFQCreation",
+    "contentMode" : "EDIT"
+  }, {
+    "serviceId" : "platform6.routes",
+    "itemId" : "BlockchainEventHandler",
     "contentMode" : "EDIT"
   }, {
     "serviceId" : "platform6.tables",
     "itemId" : "Items",
     "contentMode" : "EDIT"
   }, {
-    "serviceId" : "platform6.tables",
-    "itemId" : "AppConfig",
+    "serviceId" : "platform6.scripts",
+    "itemId" : "PreInstallApplication",
+    "contentMode" : "EDIT"
+  }, {
+    "serviceId" : "platform6.scripts",
+    "itemId" : "WFHandleRFQ-ProvideFormForQuoteCreation",
+    "contentMode" : "EDIT"
+  }, {
+    "serviceId" : "platform6.scripts",
+    "itemId" : "WFHandlePO-BuildEmail",
     "contentMode" : "EDIT"
   }, {
     "serviceId" : "platform6.scripts",
@@ -58,15 +66,15 @@
     "contentMode" : "EDIT"
   }, {
     "serviceId" : "platform6.scripts",
-    "itemId" : "RFQSmartContractHelper",
-    "contentMode" : "EDIT"
-  }, {
-    "serviceId" : "platform6.scripts",
     "itemId" : "ReceiveRFQTransaction",
     "contentMode" : "EDIT"
   }, {
     "serviceId" : "platform6.scripts",
-    "itemId" : "View_Transactions",
+    "itemId" : "WFHandlePO-HandleActionRejectOrder",
+    "contentMode" : "EDIT"
+  }, {
+    "serviceId" : "platform6.scripts",
+    "itemId" : "PostInstallApplication",
     "contentMode" : "EDIT"
   }, {
     "serviceId" : "platform6.scripts",
@@ -79,18 +87,6 @@
   }, {
     "serviceId" : "platform6.scripts",
     "itemId" : "CreateRFQTransaction",
-    "contentMode" : "EDIT"
-  }, {
-    "serviceId" : "platform6.scripts",
-    "itemId" : "WFHandleRFQ-ProvideFormForQuoteCreation",
-    "contentMode" : "EDIT"
-  }, {
-    "serviceId" : "platform6.scripts",
-    "itemId" : "WFHandlePO-BuildEmail",
-    "contentMode" : "EDIT"
-  }, {
-    "serviceId" : "platform6.scripts",
-    "itemId" : "WFHandlePO-HandleActionRejectOrder",
     "contentMode" : "EDIT"
   }, {
     "serviceId" : "platform6.scripts",
@@ -114,15 +110,19 @@
     "contentMode" : "EDIT"
   }, {
     "serviceId" : "platform6.scripts",
+    "itemId" : "View_Transactions",
+    "contentMode" : "EDIT"
+  }, {
+    "serviceId" : "platform6.scripts",
+    "itemId" : "RFQSmartContractHelper",
+    "contentMode" : "EDIT"
+  }, {
+    "serviceId" : "platform6.scripts",
     "itemId" : "WFWorkflowTaskEnhancer",
     "contentMode" : "EDIT"
   }, {
-    "serviceId" : "platform6.scripts",
-    "itemId" : "PostInstallApplication",
-    "contentMode" : "EDIT"
-  }, {
-    "serviceId" : "platform6.scripts",
-    "itemId" : "PreInstallApplication",
+    "serviceId" : "platform6.counters",
+    "itemId" : "CountAcceptedPOs",
     "contentMode" : "EDIT"
   }, {
     "serviceId" : "platform6.counters",
@@ -141,10 +141,6 @@
     "itemId" : "CountRejectedPOs",
     "contentMode" : "EDIT"
   }, {
-    "serviceId" : "platform6.counters",
-    "itemId" : "CountAcceptedPOs",
-    "contentMode" : "EDIT"
-  }, {
     "serviceId" : "platform6.homepages",
     "itemId" : "Demo Home",
     "contentMode" : "EDIT"
@@ -154,11 +150,15 @@
     "contentMode" : "EDIT"
   }, {
     "serviceId" : "platform6.workflowsteps",
-    "itemId" : "HandleRequestForQuotation",
+    "itemId" : "HandlePurchaseOrder",
     "contentMode" : "EDIT"
   }, {
     "serviceId" : "platform6.workflowsteps",
-    "itemId" : "HandlePurchaseOrder",
+    "itemId" : "HandleRequestForQuotation",
+    "contentMode" : "EDIT"
+  }, {
+    "serviceId" : "platform6.bundledresources",
+    "itemId" : "TableItemsData",
     "contentMode" : "EDIT"
   }, {
     "serviceId" : "platform6.bundledresources",
@@ -169,12 +169,20 @@
     "itemId" : "POReview",
     "contentMode" : "EDIT"
   }, {
-    "serviceId" : "platform6.bundledresources",
-    "itemId" : "TableItemsData",
-    "contentMode" : "EDIT"
-  }, {
     "serviceId" : "platform6.storedprocedures",
     "itemId" : "DeleteP6DemoTransactions",
     "contentMode" : "EDIT"
+  }, {
+    "serviceId" : "platform6.appconfig",
+    "itemId" : "contractAddress",
+    "contentMode" : "READ"
+  }, {
+    "serviceId" : "platform6.appconfig",
+    "itemId" : "ethClientURL",
+    "contentMode" : "READ"
+  }, {
+    "serviceId" : "platform6.appconfig",
+    "itemId" : "demoWallet",
+    "contentMode" : "READ"
   } ]
 }

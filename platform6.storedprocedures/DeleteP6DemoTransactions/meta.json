@@ -2,7 +2,6 @@
   "description" : {
     "EN" : "Delete all p6_demo transaction - automatically called when p6_demo application is uninstalled"
   },
-  "enabled" : false,
   "contentMode" : "READ",
   "targetDataSourceName" : null,
   "definedParameters" : { },

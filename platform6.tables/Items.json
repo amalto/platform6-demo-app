@@ -2,7 +2,6 @@
     "appKey": "p6_demo",
     "contentMode": "READ",
     "description": {"EN": "Items"},
-    "enabled": false,
     "fields": [
         {
             "length": -1,

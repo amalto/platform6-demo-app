@@ -2,6 +2,5 @@
   "description" : {
     "EN" : "Write Quote in an Ethereum smart contract"
   },
-  "enabled" : false,
   "contentMode" : "READ"
 }

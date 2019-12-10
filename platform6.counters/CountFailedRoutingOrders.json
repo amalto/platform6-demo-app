@@ -2,7 +2,6 @@
     "appKey": "p6_demo",
     "contentMode": "NONE",
     "description": {"EN": "# of Failed Routing Orders"},
-    "enabled": true,
     "name": "CountFailedRoutingOrders",
     "query": "/routingOrder",
     "target": "FailedRoutingOrder",

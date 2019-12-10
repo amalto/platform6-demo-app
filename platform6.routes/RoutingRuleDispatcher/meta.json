@@ -2,7 +2,6 @@
   "description" : {
     "EN" : "Dispatcher to RFQ, Quote or PO Routing Rules"
   },
-  "enabled" : true,
   "contentMode" : "READ",
   "type" : "xml_routing",
   "autoStart" : true
