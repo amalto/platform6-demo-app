@@ -2,38 +2,7 @@
     "appKey": "p6_demo",
     "contentMode": "READ",
     "description": {"EN": "Items"},
-    "fields": [
-        {
-            "length": -1,
-            "name": "Id",
-            "type": "string"
-        },
-        {
-            "length": -1,
-            "name": "Description",
-            "type": "string"
-        },
-        {
-            "length": -1,
-            "name": "UnitPrice",
-            "type": "string"
-        },
-        {
-            "length": -1,
-            "name": "Currency",
-            "type": "string"
-        },
-        {
-            "length": -1,
-            "name": "UOM",
-            "type": "string"
-        },
-        {
-            "length": -1,
-            "name": "Category",
-            "type": "string"
-        }
-    ],
+    "fields": ["Id", "Description", "UnitPrice", "Currency", "UOM", "Category"],
     "keys": ["Id"],
     "name": "Items"
 }
