@@ -6,5 +6,5 @@
     },
     "name": "ethClientURL",
     "type": "String",
-    "value": "http://172.13.0.20:8545"
+    "value": "http://demobc:8545"
 }
