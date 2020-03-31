@@ -2,6 +2,5 @@
   "description" : {
     "EN" : "Workflow Tasks for p6_demo"
   },
-  "contentMode" : "NONE",
-  "type" : "WORKITEMS"
+  "contentMode" : "NONE"
 }

@@ -15,12 +15,12 @@ p6.pipeline.put 'TransactionType', transactionType, 'text/plain'
 def endpoint = transactionInfo.Endpoint.text()
 p6.pipeline.put 'Endpoint', endpoint, 'text/plain'
 
-// Add common work item attributes required by the standard b2box 'Work Items' view
+// Add common work item attributes required by the standard P6 Core 'Work Items' view
 def stepXml = p6.pipeline.get '_wf_stepXml'
 def statusMap = p6.workflow.localeText stepXml, "StatusLabels/Label[@name='" + p6.pipeline.get('_wf_statusId') + "']"
-p6.pipeline.put 'Status', statusMap, 'application/b2box.i18n'
+p6.pipeline.put 'Status', statusMap, 'application/p6core.i18n'
 
 def assigneeMap = p6.workflow.localeText stepXml, 'Assignee/Label'
-p6.pipeline.put 'AssignedTo', assigneeMap, 'application/b2box.i18n'
+p6.pipeline.put 'AssignedTo', assigneeMap, 'application/p6core.i18n'
 p6.pipeline.put '_ASSIGNEDTONAME', p6.pipeline.get('_wf_assignedToId'), 'text/plain'
 p6.pipeline.put 'StartDate', p6.pipeline.get('_wf_instanceStartDate'), 'text/plain'
