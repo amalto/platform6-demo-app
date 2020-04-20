@@ -3,7 +3,7 @@
         <TransactionType>TransactionInfo/TransactionType</TransactionType>
         <TransactionFormat>TransactionInfo/PivotDocumentFormat</TransactionFormat>
     </SmartTags>
-    <DataType>p6_demo.TransactionInfo</DataType>
+    <DataType>TransactionInfo</DataType>
     <DataModel>p6_demo.TransactionInfo</DataModel>
     <DataPartition>TRANSACTION</DataPartition>
     <ReprocessRouteUri>direct:p6router.p6_demo_Dispatcher</ReprocessRouteUri>
