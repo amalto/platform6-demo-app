@@ -1,6 +1,6 @@
 delete
 from p6core.transaction
-where dataType = 'p6_demo.TransactionInfo';
+where dataType = 'TransactionInfo';
 
 delete
 from p6core.transaction

@@ -252,5 +252,5 @@ def newTransactionInfo = """<TransactionInfo>
    </KeyValue>
 </TransactionInfo>"""
 
-def quotePk = p6.transaction.buildPK('p6_demo.TransactionInfo', quoteId)
+def quotePk = p6.transaction.buildPK('TransactionInfo', quoteId)
 p6.transaction.saveAndRoute(newTransactionInfo, 'p6_demo.TransactionInfo', quotePk, 'direct:p6router.p6_demo_Dispatcher')
