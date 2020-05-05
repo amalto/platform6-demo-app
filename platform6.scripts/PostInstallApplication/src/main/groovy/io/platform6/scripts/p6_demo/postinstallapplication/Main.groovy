@@ -15,12 +15,12 @@ p6.csv.parse(csvFile) { row ->
 log.debug 'Populated the Items table from the CSV file'
 
 // Deploy the smart contract
-def web3j = p6.ethereumrpc.build(p6.appconfig.get("ethClientURL"))
-def credentials = p6.ethereumrpc.getCredentials(p6.appconfig.get("demoWallet"), "ADummyPassword")
+def web3j = p6.web3ethereum.build(p6.appconfig.get("ethClientURL"))
+def credentials = p6.web3ethereum.getCredentials(p6.appconfig.get("demoWallet"), "ADummyPassword")
 
 // Define a custom transaction manager with a polling frequency of 2 seconds
-def tm = p6.ethereumrpc.pollingTransactionManager(web3j, credentials, 2000L)
-def contract = RequestForQuotations.deploy(web3j, tm, p6.ethereumrpc.DEFAULT_GAS_PROVIDER).send()
+def tm = p6.web3ethereum.pollingTransactionManager(web3j, credentials, 2000L)
+def contract = RequestForQuotations.deploy(web3j, tm, p6.web3ethereum.DEFAULT_GAS_PROVIDER).send()
 
 // Save the contract address and Ethereum client URL in config table
 p6.appconfig.override("contractAddress", contract.getContractAddress())

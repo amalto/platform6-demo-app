@@ -38,17 +38,17 @@ class RFQSmartContractHelper {
         this.context = context
 
         def ethClientURL  = context.p6.appconfig.get('ethClientURL')
-        this.web3j = context.p6.ethereumrpc.build(ethClientURL)
+        this.web3j = context.p6.web3ethereum.build(ethClientURL)
 
         // Define a custom transaction manager with a polling frequency of 2 seconds
-        def transactionManager = context.p6.ethereumrpc.pollingTransactionManager(web3j, readCredentials(), 2000L)
+        def transactionManager = context.p6.web3ethereum.pollingTransactionManager(web3j, readCredentials(), 2000L)
 
         def contractAddress = context.p6.appconfig.get('contractAddress')
-        this.smartContract = RequestForQuotations.load(contractAddress, web3j, transactionManager, context.p6.ethereumrpc.DEFAULT_GAS_PROVIDER)
+        this.smartContract = RequestForQuotations.load(contractAddress, web3j, transactionManager, context.p6.web3ethereum.DEFAULT_GAS_PROVIDER)
     }
 
     Credentials readCredentials() {
-        return context.p6.ethereumrpc.getCredentials(context.p6.appconfig.get("demoWallet"), password)
+        return context.p6.web3ethereum.getCredentials(context.p6.appconfig.get("demoWallet"), password)
     }
 
     TransactionReceipt submitRFQ(UUID id, ZonedDateTime now, String ubl) {
