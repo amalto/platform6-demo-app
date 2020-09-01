@@ -8,7 +8,7 @@
 // Example:
 //    p6.camel.registerBean("myBean", ServiceBean )
 //
-// More information on https://documentation.amalto.com/platform6/latest/develop-app/built-in-services/routes/routes-dsl/#groovy-bean-execution
+// More information on https://documentation.amalto.com/platform6/latest/reference/built-in-services/routes/routes-dsl/#groovy-bean-execution
 // -------------------------------------------------------------------------------------------
 
 
