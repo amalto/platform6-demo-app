@@ -1,4 +1,7 @@
 {
+  "description" : {
+    "EN" : "Platform 6's demo application that showcases the use of a blockchain"
+  },
   "minInstanceVersion" : "6.3.0",
   "maxInstanceVersion" : "",
   "logo" : "data:image/png;base64,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",
@@ -9,6 +12,46 @@
   "postInstallScriptId" : "PostInstallApplication",
   "uninstallScriptId" : "UninstallApplication",
   "selectedServiceItems" : [ {
+    "serviceId" : "platform6.views",
+    "itemId" : "Transactions",
+    "contentMode" : "EDIT"
+  }, {
+    "serviceId" : "platform6.views",
+    "itemId" : "Workflow Tasks",
+    "contentMode" : "EDIT"
+  }, {
+    "serviceId" : "platform6.routes",
+    "itemId" : "RoutingRuleDispatcher",
+    "contentMode" : "EDIT"
+  }, {
+    "serviceId" : "platform6.routes",
+    "itemId" : "SchedulerForRFQCreation",
+    "contentMode" : "EDIT"
+  }, {
+    "serviceId" : "platform6.routes",
+    "itemId" : "RoutingRulesForPurchaseOrders",
+    "contentMode" : "EDIT"
+  }, {
+    "serviceId" : "platform6.routes",
+    "itemId" : "SchedulerForCountersRefresh",
+    "contentMode" : "EDIT"
+  }, {
+    "serviceId" : "platform6.routes",
+    "itemId" : "BlockchainEventHandler",
+    "contentMode" : "EDIT"
+  }, {
+    "serviceId" : "platform6.routes",
+    "itemId" : "RoutingRulesForRFQs",
+    "contentMode" : "EDIT"
+  }, {
+    "serviceId" : "platform6.routes",
+    "itemId" : "RoutingRulesForQuotes",
+    "contentMode" : "EDIT"
+  }, {
+    "serviceId" : "platform6.tables",
+    "itemId" : "Items",
+    "contentMode" : "EDIT"
+  }, {
     "serviceId" : "platform6.scripts",
     "itemId" : "View_Workflow Tasks",
     "contentMode" : "EDIT"
@@ -81,6 +124,26 @@
     "itemId" : "PreInstallApplication",
     "contentMode" : "EDIT"
   }, {
+    "serviceId" : "platform6.counters",
+    "itemId" : "CountRFQs",
+    "contentMode" : "EDIT"
+  }, {
+    "serviceId" : "platform6.counters",
+    "itemId" : "CountQuotes",
+    "contentMode" : "EDIT"
+  }, {
+    "serviceId" : "platform6.counters",
+    "itemId" : "CountFailedRoutingOrders",
+    "contentMode" : "EDIT"
+  }, {
+    "serviceId" : "platform6.counters",
+    "itemId" : "CountRejectedPOs",
+    "contentMode" : "EDIT"
+  }, {
+    "serviceId" : "platform6.counters",
+    "itemId" : "CountAcceptedPOs",
+    "contentMode" : "EDIT"
+  }, {
     "serviceId" : "platform6.appconfig",
     "itemId" : "demoWallet",
     "contentMode" : "READ"
@@ -92,6 +155,10 @@
     "serviceId" : "platform6.appconfig",
     "itemId" : "ethClientURL",
     "contentMode" : "READ"
+  }, {
+    "serviceId" : "platform6.homepages",
+    "itemId" : "Demo Home",
+    "contentMode" : "EDIT"
   }, {
     "serviceId" : "platform6.datamodels",
     "itemId" : "TransactionInfo",
@@ -117,72 +184,8 @@
     "itemId" : "TableItemsData",
     "contentMode" : "EDIT"
   }, {
-    "serviceId" : "platform6.counters",
-    "itemId" : "CountRFQs",
-    "contentMode" : "EDIT"
-  }, {
-    "serviceId" : "platform6.counters",
-    "itemId" : "CountQuotes",
-    "contentMode" : "EDIT"
-  }, {
-    "serviceId" : "platform6.counters",
-    "itemId" : "CountFailedRoutingOrders",
-    "contentMode" : "EDIT"
-  }, {
-    "serviceId" : "platform6.counters",
-    "itemId" : "CountRejectedPOs",
-    "contentMode" : "EDIT"
-  }, {
-    "serviceId" : "platform6.counters",
-    "itemId" : "CountAcceptedPOs",
-    "contentMode" : "EDIT"
-  }, {
-    "serviceId" : "platform6.views",
-    "itemId" : "Transactions",
-    "contentMode" : "EDIT"
-  }, {
-    "serviceId" : "platform6.views",
-    "itemId" : "Workflow Tasks",
-    "contentMode" : "EDIT"
-  }, {
-    "serviceId" : "platform6.tables",
-    "itemId" : "Items",
-    "contentMode" : "EDIT"
-  }, {
-    "serviceId" : "platform6.routes",
-    "itemId" : "RoutingRuleDispatcher",
-    "contentMode" : "EDIT"
-  }, {
-    "serviceId" : "platform6.routes",
-    "itemId" : "SchedulerForRFQCreation",
-    "contentMode" : "EDIT"
-  }, {
-    "serviceId" : "platform6.routes",
-    "itemId" : "RoutingRulesForPurchaseOrders",
-    "contentMode" : "EDIT"
-  }, {
-    "serviceId" : "platform6.routes",
-    "itemId" : "SchedulerForCountersRefresh",
-    "contentMode" : "EDIT"
-  }, {
-    "serviceId" : "platform6.routes",
-    "itemId" : "BlockchainEventHandler",
-    "contentMode" : "EDIT"
-  }, {
-    "serviceId" : "platform6.routes",
-    "itemId" : "RoutingRulesForRFQs",
-    "contentMode" : "EDIT"
-  }, {
-    "serviceId" : "platform6.routes",
-    "itemId" : "RoutingRulesForQuotes",
-    "contentMode" : "EDIT"
-  }, {
     "serviceId" : "platform6.storedprocedures",
     "itemId" : "DeleteP6DemoTransactions",
-    "contentMode" : "EDIT"
-  }, {
-    "serviceId" : "platform6.homepages",
-    "itemId" : "Demo Home",
     "contentMode" : "EDIT"
   } ]
 }
