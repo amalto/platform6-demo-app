@@ -4,6 +4,6 @@
   },
   "contentMode" : "NONE",
   "targetRoot" : "${P6_DATA}",
-  "targetPath" : "/lib/demo-app-smart-contract-1.2.jar",
+  "targetPath" : "/lib/demo-app-smart-contract-1.3.jar",
   "props" : { }
 }

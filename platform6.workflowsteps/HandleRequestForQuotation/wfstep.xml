@@ -1,10 +1,10 @@
 <WorkflowStep enabled="true">
-    
+
     <Description>
         <EN>RequestForQuotation - Answer or decline</EN>
         <FR>Devis - Répondre ou décliner</FR>
     </Description>
-    
+
     <AllowTransactionEdit>ASSIGNEE</AllowTransactionEdit>
     <TransactionDataModel>p6_demo.TransactionInfo</TransactionDataModel>
     <ViewNames>
@@ -14,45 +14,46 @@
 
     <AllowRecall>false</AllowRecall>
     <AllowApproverDelegation>false</AllowApproverDelegation>
-    
+
     <SendEmails>false</SendEmails>
 
     <Ttl id="expire">120</Ttl>
-    
-	<WorkItem script="p6_demo.WFWorkflowTaskEnhancer"/>
-    
-    <Assignee name="DemoApp" path="/${INSTANCE_ID}" type="UNIT" scope="*=*">
+
+    <WorkflowTaskEnhancer script="p6_demo.WFWorkflowTaskEnhancer"/>
+
+    <Assignee name="DemoApp" path="/${INSTANCE_ID}" scope="*=*">
         <Label>
             <EN>Supplier</EN>
             <FR>Fournisseur</FR>
         </Label>
     </Assignee>
-    
-	<StatusLabels>
-	    <Label name="Received" >
+
+    <StatusLabels>
+        <Label name="Received">
             <EN>Received</EN>
             <FR>Reçue</FR>
         </Label>
-        <Label name="Created" >
+        <Label name="Created">
             <EN>Created</EN>
             <FR>Créée</FR>
         </Label>
-        <Label name="Deprecated" >
+        <Label name="Deprecated">
             <EN>Deprecated</EN>
             <FR>Annulée</FR>
         </Label>
-        <Label name="Provided" >
+        <Label name="Provided">
             <EN>Quote provided</EN>
             <FR>Quotation fournie</FR>
         </Label>
-        <Label name="Declined" >
+        <Label name="Declined">
             <EN>Declined</EN>
             <FR>Déclinée</FR>
         </Label>
     </StatusLabels>
-    
+
     <Actions>
-        <Action id="send" status="Provided" type="FORM" stop="true" script="p6_demo.WFHandleRFQ-HandleActionProvideQuote">
+        <Action id="send" status="Provided" type="FORM" stop="true"
+                script="p6_demo.WFHandleRFQ-HandleActionProvideQuote">
             <Style>icon:fa-check,btn:btn-success</Style>
 
             <Label>
@@ -61,50 +62,55 @@
             </Label>
 
             <FormGenerator>p6_demo.WFHandleRFQ-ProvideFormForQuoteCreation</FormGenerator>
-           
-           <Parameter>
-                <Name>rfq</Name>
-                <Label>
-                    <EN>rfq</EN>
-                    <FR>rfq</FR>
-                </Label>
-                <Mandatory>false</Mandatory>
-                <InputType>TEXT</InputType>
-            </Parameter>
-            
-            <Parameter>
-                <Name>lines</Name>
-                <Label>
-                    <EN>lines</EN>
-                    <FR>lines</FR>
-                </Label>
-                <Mandatory>false</Mandatory>
-                <InputType>TEXT</InputType>
-            </Parameter>
+
+            <Parameters>
+                <Parameter>
+                    <Name>rfq</Name>
+                    <Label>
+                        <EN>rfq</EN>
+                        <FR>rfq</FR>
+                    </Label>
+                    <Mandatory>false</Mandatory>
+                    <InputType>TEXT</InputType>
+                </Parameter>
+
+                <Parameter>
+                    <Name>lines</Name>
+                    <Label>
+                        <EN>lines</EN>
+                        <FR>lines</FR>
+                    </Label>
+                    <Mandatory>false</Mandatory>
+                    <InputType>TEXT</InputType>
+                </Parameter>
+            </Parameters>
         </Action>
-                
-        <Action id="deprecate" status="Declined" type="ACTION" stop="true" script="p6_demo.WFHandleRFQ-HandleActionDecline">
-            <Style>icon:fa-times,btn:btn-danger,color:danger</Style> 
-            
+
+        <Action id="deprecate" status="Declined" stop="true"
+                script="p6_demo.WFHandleRFQ-HandleActionDecline">
+            <Style>icon:fa-times,btn:btn-danger,color:danger</Style>
+
             <Label>
                 <EN>Decline</EN>
                 <FR>Décliner quot.</FR>
             </Label>
-            
-            <Parameter>
-	            <Name>reason</Name>
-                <Label>
-                    <EN>Reason</EN>
-                    <FR>Motif</FR>
-                </Label>
-                <Mandatory>false</Mandatory>
-                <InputType>TEXTAREA</InputType>
-            </Parameter>
+
+            <Parameters>
+                <Parameter>
+                    <Name>reason</Name>
+                    <Label>
+                        <EN>Reason</EN>
+                        <FR>Motif</FR>
+                    </Label>
+                    <Mandatory>false</Mandatory>
+                    <InputType>TEXTAREA</InputType>
+                </Parameter>
+            </Parameters>
         </Action>
-        
+
         <Action id="expire" status="EXPIRED" type="EXPIRE" display="false">
-			<Expiry error="false"/>
+            <Expiry error="false"/>
         </Action>
     </Actions>
-    
+
 </WorkflowStep>
