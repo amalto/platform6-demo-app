@@ -22,7 +22,7 @@
                 <FR>Type du Doc</FR>
             </Description>
             <XPath>WorkflowTask/itemAttributes[key="TransactionType"]/values/_text</XPath>
-            <Type>StringContains</Type>
+            <Type>Words</Type>
         </Searchable>
         <Searchable>
             <Name>Doc. Number</Name>
@@ -31,7 +31,7 @@
                 <FR>N° du Doc</FR>
             </Description>
             <XPath>WorkflowTask/itemAttributes[key="TransactionNumber"]/values/_text</XPath>
-            <Type>StringContains</Type>
+            <Type>Words</Type>
         </Searchable>
         <Searchable>
             <Name>Assignee</Name>
@@ -71,7 +71,7 @@
           <XPath>/WorkflowTask/itemAttributes[key="TransactionNumber"]/values/_text</XPath>
           <Type>String</Type>
        </Viewable>
-        
+
         <Viewable>
             <Name>itemLink</Name>
             <Description>

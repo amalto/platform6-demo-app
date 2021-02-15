@@ -43,7 +43,7 @@
                 <FR>Type de transaction</FR>
             </Description>
             <XPath>TransactionInfo/TransactionType</XPath>
-            <Type>StringContains</Type>
+            <Type>Words</Type>
             <Choice field-line-height="1" multi-select="true" multi-select-delimiter="|">Request for Quotation, Quote, Purchase Order</Choice>
         </Searchable>
         <Searchable>
@@ -53,7 +53,7 @@
                 <FR>Numéro de transaction</FR>
             </Description>
             <XPath>TransactionInfo/TransactionNumber</XPath>
-            <Type>StringContains</Type>
+            <Type>Words</Type>
         </Searchable>
         <Searchable>
             <Name>BuyerName</Name>
@@ -62,7 +62,7 @@
                 <FR>Nom de l'acheteur</FR>
             </Description>
             <XPath>TransactionInfo/KeyValue[./Key = "Buyer Name"]/Value</XPath>
-            <Type>StringContains</Type>
+            <Type>Words</Type>
         </Searchable>
         <Searchable>
             <Name>Keywords</Name>
@@ -71,7 +71,7 @@
                 <FR>Mots clefs</FR>
             </Description>
             <XPath>TransactionInfo</XPath>
-            <Type>StringContains</Type>
+            <Type>Words</Type>
         </Searchable>
         <Searchable>
             <Name>TechnicalStatusCode</Name>
@@ -80,7 +80,7 @@
                 <FR>Statut technique</FR>
             </Description>
             <XPath>TransactionInfo/TechnicalStatusCode</XPath>
-            <Type>StringContains</Type>
+            <Type>Words</Type>
             <Choice field-line-height="2" multi-select="true" multi-select-delimiter="|">Handled,Received,Sent</Choice>
         </Searchable>
         <Searchable>
@@ -90,7 +90,7 @@
                 <FR>Statut fonctionnel</FR>
             </Description>
             <XPath>TransactionInfo/FunctionalStatusCode</XPath>
-            <Type>StringContains</Type>
+            <Type>Words</Type>
             <Choice field-line-height="2" multi-select="true" multi-select-delimiter="|">Accepted,Declined,Quote provided,Rejected</Choice>
         </Searchable>
     </ListOfSearchables>
@@ -185,7 +185,7 @@
             <XPath>TransactionInfo/TargetDocumentURI</XPath>
              <Type>URI</Type>
         </Viewable>
-        
+
         <Viewable>
          <Name>itemLink</Name>
          <Description>
