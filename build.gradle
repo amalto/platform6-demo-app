@@ -17,7 +17,7 @@ ext {
 
 dependencies {
     // By default include all jars in bundled resources
-    new File("platform6.bundledresources").eachDir {
+    new File("platform6.bundledresources", projectDir).eachDir {
         implementation fileTree(dir: it, include: "*.jar")
     }
 
@@ -34,7 +34,7 @@ dependencies {
 sourceSets {
     main {
         groovy {
-            new File("platform6.scripts").eachDir {
+            new File("platform6.scripts", projectDir).eachDir {
                 srcDir it.path + "/src/main/groovy"
             }
         }
